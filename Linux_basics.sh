@@ -67,6 +67,11 @@ awk '{print NF}' test_table1.txt
 
 #3
 while read line; do echo "$line" | wc -w; done < test_table1.txt
+while read line; do echo "$line" | wc -w; done < test_table1.txt
+#(read: reads one line from the input and assigns it to the variable "line". the loop continues until the end.) 
+#(echo "$line": This command prints the current line stored in the variable line)
+#(wc -w: counts the number of columns in the current line)
+
 
 #### Count the number of times "1" appears in test_table1.txt
 
