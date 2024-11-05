@@ -68,10 +68,10 @@ wc -m test_table1.txt (wc: word count command, -m: counts characters)
 ## 1
 awk -F'       ' '{print NF}' test_table1.txt ### -F is the option used to declare the field separator i.e. tab here and NF is built-in variable in awk that holds the number of fields (columns) in the current line.
 
-##2
+## 2
 awk '{print NF}' test_table1.txt
 
-#3
+## 3
 while read line; do echo "$line" | wc -w; done < test_table1.txt
 
 #(read: reads one line from the input and assigns it to the variable "line". the loop continues until the end.) 
@@ -80,11 +80,21 @@ while read line; do echo "$line" | wc -w; done < test_table1.txt
 
 
 #### Count the number of times "1" appears in test_table1.txt
+
 ###solution 
 
-#1
+## 1
 grep -o '1' test_table1.txt | wc -l 
 
 #### Count the number of words/strings containing "1" in test_table1.txt
+
+###solution 
+
+## 1
 grep -o '\S*1\S*' test_table1.txt | wc -l
 #it will match any word that contains the digit "1" surrounded by any number of non-whitespace characters
+
+## 2
+less test_table1.txt| tr -s '\t' '[\n*]' | grep -e "1" | wc -l
+# we convert the table to a list using tr (transpose saying convert tab (\t) to the next line (\n)) and then selecting all strings with the character 1 using grep and then counting the number of lines
+
