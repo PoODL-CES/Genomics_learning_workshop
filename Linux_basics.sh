@@ -16,3 +16,10 @@ touch test_table.txt #creates a new text file in the directory
 } > test_table.txt # ">" forwards the entered table data into test_table.txt
 
 ## 2
+cat > test_table.txt # Creates a new file in the directory or outputs the contents of the file to the terminal.
+{
+ 1    2    3    4    5
+ 6    7    8    9    10
+ 11    12    13    14
+ 15    16    17    18
+ 
