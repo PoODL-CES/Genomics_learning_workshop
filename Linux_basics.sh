@@ -35,6 +35,12 @@ cat > test_table1.txt # Creates a new file in the directory or outputs the conte
  
 ## 3
 nano test_table1.txt ## nano is a text editor. it will create and open a file named test_table1.txt. type the text in it. Exit with ctrl X and save with y.
+##4
+vim test_table1.txt 
+## vim will edit the file 
+#After the command press "i" to enter insert mode and start editing
+#After editing press "Esc" to exit inser mode
+#type ":wq" and press enter to save the edited file
 
 #### Create a directory named genomics_workshop_PoODL and move the file test_table1.txt into it
 
