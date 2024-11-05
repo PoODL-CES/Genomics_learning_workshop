@@ -76,4 +76,4 @@ while read line; do echo "$line" | wc -w; done < test_table1.txt
 #### Count the number of times "1" appears in test_table1.txt
 
 
-
+#### Count the number of words containing "1" in test_table1.txt
