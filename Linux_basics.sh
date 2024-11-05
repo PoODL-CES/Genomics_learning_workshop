@@ -40,7 +40,7 @@ wc -l test_table1.txt #(wc - wordcount; l- lines)
 ## to view file
 cat test_table1.txt
 #or
-less test_table1.txt
+less test_table1.txt #it will show the file contents in a new window, press Q to return back to the original window
 
 #to list contents in a directory
 ls <folder_name> 
