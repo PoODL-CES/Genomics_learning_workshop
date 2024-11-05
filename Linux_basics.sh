@@ -58,6 +58,8 @@ wc -m test_table1.txt
 #### Count the number of columns per row in test_table1.txt
 
 ### Solution
+awk -F'       ' '{print NF}' test_table1.txt
+
 
 
 
