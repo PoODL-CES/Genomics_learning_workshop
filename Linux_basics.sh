@@ -86,5 +86,7 @@ while read line; do echo "$line" | wc -w; done < test_table1.txt
 grep -o '1' test_table1.txt | wc -l 
 
 #### Count the number of words/strings containing "1" in test_table1.txt
+
+#1
 grep -o '\S*1\S*' test_table1.txt | wc -l
 #it will match any word that contains the digit "1" surrounded by any number of non-whitespace characters
