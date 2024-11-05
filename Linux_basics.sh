@@ -65,7 +65,8 @@ awk -F'       ' '{print NF}' test_table1.txt ### -F is the option used to declar
 ##2
 awk '{print NF}' test_table1.txt
 
-
+#3
+while read line; do     echo "$line" | wc -w; done < test_table1.txt
 
 
 
