@@ -98,3 +98,5 @@ grep -o '\S*1\S*' test_table1.txt | wc -l
 less test_table1.txt| tr -s '\t' '[\n*]' | grep -e "1" | wc -l
 # we convert the table to a list using tr (transpose saying convert tab (\t) to the next line (\n)) and then selecting all strings with the character 1 using grep and then counting the number of lines
 
+#1
+rm test_table1.txt
