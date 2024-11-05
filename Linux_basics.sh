@@ -53,14 +53,17 @@ wc -l test_table1.txt #(wc - wordcount; l- lines)
 #### Count the number of characters in test_table1.txt
 
 ### Solution
+## 1
 wc -m test_table1.txt
 
 #### Count the number of columns per row in test_table1.txt
 
 ### Solution
+## 1
 awk -F'       ' '{print NF}' test_table1.txt
 
-
+##2
+awk '{print NF}' test_table1.txt
 
 
 
