@@ -35,6 +35,15 @@ mkdir genomics_workshop_PoODL #creates new directory or folder named "genomics_w
 mv test_table1.txt genomics_workshop_PoODL # moves the file "test_table1.txt" into the newly created directory/folder "genomics_workshop_PoODL"
 
 #### Count the number of lines in test_table1.txt
+wc -l test_table1.txt #(wc - wordcount; l- lines)
+
+## to view file
+cat test_table1.txt
+#or
+less test_table1.txt
+
+#to list contents in a directory
+ls <folder_name> 
 
 
 
