@@ -29,8 +29,8 @@ nano test_table1.txt ## nano is a text editor. it will create and open a file na
 
 #### Create a directory named genomics_workshop_PoODL and move the file test_table1.txt into it
 ### Solution 1
-mkdir genomics_workshop_PoODL
-mv test_table1.txt genomics_workshop_PoODL
+mkdir genomics_workshop_PoODL #creates new directory or folder named "genomics_workshop_PoODL"
+mv test_table1.txt genomics_workshop_PoODL # moves the file "test_table1.txt" into the newly created directory/folder "genomics_workshop_PoODL"
 
 
 
