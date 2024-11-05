@@ -60,7 +60,7 @@ wc -m test_table1.txt (wc: word count command, -m: counts characters)
 
 ### Solution
 ## 1
-awk -F'       ' '{print NF}' test_table1.txt ###-F is the delimiter i.e. tab here and NF is "awk" the built-in variable that holds the number of fields (columns) in the current line.
+awk -F'       ' '{print NF}' test_table1.txt ### -F is the option used to declare the field separator i.e. tab here and NF is built-in variable in awk that holds the number of fields (columns) in the current line.
 
 
 ##2
