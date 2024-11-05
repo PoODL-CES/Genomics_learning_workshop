@@ -79,4 +79,4 @@ while read line; do echo "$line" | wc -w; done < test_table1.txt
 #1
 grep -o '1' test_table1.txt | wc -l 
 
-#### Count the number of words containing "1" in test_table1.txt
+#### Count the number of words/strings containing "1" in test_table1.txt
