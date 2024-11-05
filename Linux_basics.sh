@@ -29,3 +29,15 @@ nano test_table1.txt ## nano is a text editor. it will create and open a file na
 
 #### Create a directory named genomics_workshop_PoODL and move the file test_table1.txt into it
 ### Solution
+
+
+
+
+
+
+
+
+
+
+
+
