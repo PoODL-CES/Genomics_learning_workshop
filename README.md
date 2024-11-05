@@ -1,3 +1,3 @@
-Basic linux tutorial 1: \
-Basic linux tutorial 2: \
+Basic linux tutorial 1: Linux_basics.sh \
+Advanced linux tutorial 2: \
 Understanding fastq files: 
