@@ -53,7 +53,7 @@ wc -l test_table1.txt #(wc - wordcount; l- lines)
 #### Count the number of characters in test_table1.txt
 
 ### Solution
-
+wc -m test_table1.txt
 
 #### Count the number of columns per row in test_table1.txt
 
