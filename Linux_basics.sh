@@ -74,8 +74,9 @@ while read line; do echo "$line" | wc -w; done < test_table1.txt
 
 
 #### Count the number of times "1" appears in test_table1.txt
-#solution 1
-grep -o '1' test_table1.txt | wc -l 
+###solution 
 
+#1
+grep -o '1' test_table1.txt | wc -l 
 
 #### Count the number of words containing "1" in test_table1.txt
