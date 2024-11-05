@@ -50,9 +50,14 @@ cd genomics_workshop_PoODL ## changes the directory to genomics_workshop_PoODL
 ## 1
 wc -l test_table1.txt #(wc - wordcount; l- lines)
 
+#### Count the number of characters in test_table1.txt
+
+### Solution
 
 
+#### Count the number of columns per row in test_table1.txt
 
+### Solution
 
 
 
