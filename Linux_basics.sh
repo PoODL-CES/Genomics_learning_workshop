@@ -8,7 +8,7 @@ less test_table1.txt #it will show the file contents in a new window, press q to
 ls <folder_name> 
 
 ##### Task 1
-**#### Create the following table in a file named test_table1.txt on terminal **
+#### Create the following table in a file named test_table1.txt on terminal
 1  2  3  4  5
 6  7  8  9  10 
 11  12  13  14
