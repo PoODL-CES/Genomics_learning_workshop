@@ -28,10 +28,13 @@ cat > test_table1.txt # Creates a new file in the directory or outputs the conte
 nano test_table1.txt ## nano is a text editor. it will create and open a file named test_table1.txt. type the text in it. Exit with ctrl X and save with y.
 
 #### Create a directory named genomics_workshop_PoODL and move the file test_table1.txt into it
-### Solution 1
+
+### Solution 
+##1
 mkdir genomics_workshop_PoODL #creates new directory or folder named "genomics_workshop_PoODL"
 mv test_table1.txt genomics_workshop_PoODL # moves the file "test_table1.txt" into the newly created directory/folder "genomics_workshop_PoODL"
 
+#### Count the number of lines in test_table1.txt
 
 
 
