@@ -1,3 +1,12 @@
+##### Basics
+## to view file in linux
+cat test_table1.txt
+#or
+less test_table1.txt #it will show the file contents in a new window, press q to return back to the original window
+
+#to list contents in a directory
+ls <folder_name> 
+
 ##### Task 1
 #### Create the following table in a file named test_table1.txt on terminal
 1  2  3  4  5
@@ -30,21 +39,18 @@ nano test_table1.txt ## nano is a text editor. it will create and open a file na
 #### Create a directory named genomics_workshop_PoODL and move the file test_table1.txt into it
 
 ### Solution 
-##1
+## 1
 mkdir genomics_workshop_PoODL #creates new directory or folder named "genomics_workshop_PoODL"
 mv test_table1.txt genomics_workshop_PoODL # moves the file "test_table1.txt" into the newly created directory/folder "genomics_workshop_PoODL"
 cd genomics_workshop_PoODL ## changes the directory to genomics_workshop_PoODL
 
 #### Count the number of lines in test_table1.txt
+
+### Solution
+## 1
 wc -l test_table1.txt #(wc - wordcount; l- lines)
 
-## to view file
-cat test_table1.txt
-#or
-less test_table1.txt #it will show the file contents in a new window, press q to return back to the original window
 
-#to list contents in a directory
-ls <folder_name> 
 
 
 
