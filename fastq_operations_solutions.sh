@@ -31,3 +31,5 @@ echo $(( $(zcat LGS1_sub_1.fq.gz | wc -l) / 4 ))
 less LGS1_sub_1.fq.gz | wc -l | awk '{print $1 / 4}'
 
 #### How many reads are shorter than 150bp?
+zcat BEN_CI16_sub_1.fq.gz | awk 'NR % 4 == 2 {print length($0)}'
+## NR % 4 == 2: This will check every 2nd line of the each four line of FASTAQ and length($0): This will returns the length of the sequence.
