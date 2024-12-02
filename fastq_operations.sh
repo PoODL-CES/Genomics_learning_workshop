@@ -1,4 +1,4 @@
-#### Download the datasets from 
+#### Download the datasets from https://zenodo.org/records/14258052
 
 ### Count the number of sequencing reads in the fastq files
 solution1: for LGS1_sub_1.fq
