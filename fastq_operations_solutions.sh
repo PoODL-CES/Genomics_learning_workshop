@@ -32,11 +32,19 @@ less LGS1_sub_1.fq.gz | wc -l | awk '{print $1 / 4}'
 
 #### How many reads are shorter than 150bp?
 
+### Solution
 ## 1
 zcat BEN_CI16_sub_1.fq.gz | awk 'NR % 4 == 2 {print length($0)}' | awk '$1<150' | wc -l
 ## NR % 4 == 2: This will check every 2nd line of the each four line of FASTAQ and length($0): This will returns the length of the sequence.
 
-## 2
+#### How many reads are longer than 150bp?
+### Solution
+
+
+#### How many reads are not equal to 150bp?
+
+### Solution
+## 1
 zcat file.fastq.gz | awk 'NR % 4 == 2 {if (length($0) != 150) print length($0)}' | wc -l
 #if (length($0) != 150): Checks if the length of the sequence is not equal to 150.
 #print length($0): Prints the length of sequences that are not 150.
