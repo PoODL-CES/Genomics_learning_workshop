@@ -53,4 +53,7 @@ zcat file.fastq.gz | awk 'NR % 4 == 2 {if (length($0) != 150) print length($0)}'
 #if (length($0) != 150): Checks if the length of the sequence is not equal to 150.
 #print length($0): Prints the length of sequences that are not 150.
 
+#### How many reads are contaminated with illumination adapters
+#### The adapter sequence is CTGTCTCTTATACACATCT
+
 
