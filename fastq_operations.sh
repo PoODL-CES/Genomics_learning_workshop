@@ -1,5 +1,7 @@
 #### Download the datasets from https://zenodo.org/records/14258052
 
+### Structure of fastq files
+
 ### Count the number of sequencing reads in the fastq files
 
 ### Solution
