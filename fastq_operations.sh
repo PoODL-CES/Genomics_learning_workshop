@@ -11,3 +11,6 @@ echo $(( $(wc -l < LGS1_sub_1.fq) / 4 ))
 echo: displays result of the arithmatic operation
 wc -1: counts the number of lines in LGS1_sub_1.fq
 dividing by 4 since one sequencing read has 4 lines of fastq file
+
+Solution 3
+# wc -l LGS1_sub_1.fq | awk '{print $1 / 4}'
