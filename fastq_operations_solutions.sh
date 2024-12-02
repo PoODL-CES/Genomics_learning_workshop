@@ -11,7 +11,7 @@ GGACCTTCTGTCATTTCACTCCTTCTGAAGTAAGGAGTGAAGTAAACACGAAGTAAACACGACAGGTTAGTCCTATTCCT
 AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFAFJJJJJJJJJJJJJJJJFJJJJJJJJJFJJJJJJJJJFFFJJJJJJJJJJJ #base call quality scores (ASCII characters)
 
 
-### Count the number of sequencing reads in the fastq files
+#### Count the number of sequencing reads in the fastq files
 
 ### Solution
 ## 1
@@ -30,3 +30,4 @@ echo $(( $(zcat LGS1_sub_1.fq.gz | wc -l) / 4 ))
 ## 3
 less LGS1_sub_1.fq.gz | wc -l | awk '{print $1 / 4}'
 
+#### How many reads are shorter than 150bp?
