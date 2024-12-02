@@ -49,3 +49,7 @@ zcat file.fastq.gz | awk 'NR % 4 == 2 {if (length($0) != 150) print length($0)}'
 #if (length($0) != 150): Checks if the length of the sequence is not equal to 150.
 #print length($0): Prints the length of sequences that are not 150.
 
+# The lenght of sequence more than 150
+zcat BEN_CI16_sub_1.fq.gz | awk 'NR % 4 == 2 {print length($0)}' | awk '$1>150' | wc -l 
+# Similar to solution 1 of this part.
+
