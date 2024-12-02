@@ -1,6 +1,7 @@
 #### Download the datasets from https://zenodo.org/records/14258052
 
 ### Structure of fastq files
+# fastq files are the sequencing out files files obtained after demultimplexing data from illumina seqeuncers. Most sequencing companies provide this file format for illumina data.
 #It consists of four lines
 @SRR15369215.126490887 #sequence identifier 
 GGACCTTCTGTCATTTCACTCCTTCTGAAGTAAGGAGTGAAGTAAACACGAAGTAAACACGACAGGTTAGTCCTATTCCTTCAAGCAGGAGTACAGAAAAGAATGCAAATTCTGGGTTCTAGCCCAGCTTTTACTCCTATGGTTCTATTT #sequence
