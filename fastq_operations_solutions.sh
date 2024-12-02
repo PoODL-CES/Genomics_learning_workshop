@@ -30,4 +30,5 @@ echo $(( $(zcat LGS1_sub_1.fq.gz | wc -l) / 4 ))
 ## 3
 wc -l LGS1_sub_1.fq | awk '{print $1 / 4}'
 
-## 4
+ ## Without gunzip the file for example BEN_CI16_sub_1.fq.gz
+zcat BEN_CI16_sub_1.fq.gz # zcat similar to cat but for the compressed file i.e file.fq.gz
