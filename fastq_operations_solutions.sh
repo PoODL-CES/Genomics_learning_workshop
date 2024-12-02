@@ -21,10 +21,11 @@ grep '^@' LGS1_sub_1.fq | wc -l
 # wc -l: Counts the number of matching lines.
 
 ## 2
-echo $(( $(wc -l < LGS1_sub_1.fq) / 4 ))
-# echo: displays result of the arithmatic operation
-# wc -1: counts the number of lines in LGS1_sub_1.fq
-# dividing by 4 since one sequencing read has 4 lines of fastq file
+echo $(( $(zcat LGS1_sub_1.fq.gz | wc -l) / 4 ))
+#zcat: to decompress .gz file
+#wc-1: counts the number of lines in decompressed output
+#divsion by 4 to calculate total number of reads (since each fastq entry will have 4 lines)
+#echo to show the result of the calculation
 
 ## 3
 wc -l LGS1_sub_1.fq | awk '{print $1 / 4}'
