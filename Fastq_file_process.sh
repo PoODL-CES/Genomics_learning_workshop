@@ -6,6 +6,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 
+### After installing, close and reopen your terminal application or refresh it by running the following command:
 source ~/miniconda3/bin/activate
 
 ### To initialize conda on all available shells, run the following command:
