@@ -11,3 +11,7 @@ source ~/miniconda3/bin/activate
 
 ### To initialize conda on all available shells, run the following command:
 miniconda3/bin/./conda init --all
+
+
+### install fastqc
+miniconda3/bin/./conda create -n fastqc -c bioconda fastqc
