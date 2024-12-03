@@ -26,4 +26,4 @@ xdg-open BEN_CI16_sub_2_fastqc.html
 exit
 #then, log into the CES cluster 
 scp uid@10.58.21.46:/home/pranav/BEN_CI16_sub_2_fastqc.html .
-#open the file from your home directory
+#open the file from your home directory 
