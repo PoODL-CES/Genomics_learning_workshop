@@ -6,6 +6,7 @@ You may want to learn quickly about how illuminating sequencing works: https://w
 
 
 Basic linux tutorial : Linux_basics.sh \
-Possible solutions to linux tutorial 1: Linux_basics_solutions.sh \
-Advanced linux tutorial : \
+Possible solutions to basic linux tutorial : Linux_basics_solutions.sh \
+Advanced linux tutorial : Linux_advanced.sh \
+Possible solutions to Advanced linux tutorial: Linux_advanced_solutions.sh \
 Initial read processing of illumina seqeuncing reads: fastq_operations.sh 
