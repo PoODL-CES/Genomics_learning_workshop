@@ -13,7 +13,10 @@ source ~/miniconda3/bin/activate
 miniconda3/bin/./conda init --all
 
 
-### For getting summary of fastq files, install fastqc (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+#### For getting summary of fastq files, install fastqc (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-### install fastqc
+## Install fastqc
 miniconda3/bin/./conda create -n fastqc -c bioconda fastqc
+
+## Activate the conda environment
+miniconda3/bin/./conda activate fastqc
