@@ -10,4 +10,4 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 
 ### To initialize conda on all available shells, run the following command:
-conda init --all
+miniconda3/bin/./conda init --all
