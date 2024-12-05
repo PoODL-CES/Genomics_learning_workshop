@@ -21,3 +21,5 @@ conda create -n fastqc -c bioconda fastqc
 ## Activate the conda environment
 conda activate fastqc
 
+## run fastqc
+fastqc *.fq.gz
