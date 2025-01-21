@@ -23,3 +23,7 @@ conda activate fastqc
 
 ## run fastqc
 fastqc *.fq.gz
+
+#### Install trim_galore
+
+conda create -n trim-galore -c bioconda trim-galore
