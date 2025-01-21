@@ -10,3 +10,4 @@ Possible solutions to basic linux tutorial : Linux_basics_solutions.sh \
 Advanced linux tutorial : Linux_advanced.sh \
 Possible solutions to Advanced linux tutorial: Linux_advanced_solutions.sh \
 Initial read processing of illumina seqeuncing reads: Fastq_file_processing.sh 
+Download the datasets from https://zenodo.org/records/14258052
