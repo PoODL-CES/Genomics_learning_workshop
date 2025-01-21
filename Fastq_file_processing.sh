@@ -60,5 +60,7 @@ Trims both read 1 ($file) and read 2 ($paired_file) together.
 for file in *_1.fq.gz; do
   trim_galore --paired "$file" "${file/_1.fq.gz/_2.fq.gz}"
 done
+# "$file" refers to the current forward read (read 1).
+# ${file/_1.fq.gz/_2.fq.gz} dynamically generates the corresponding reverse read (read 2) by replacing _1 with _2 in the file name.
 
 
