@@ -26,6 +26,8 @@ fastqc *.fq.gz
 
 #### Install trim_galore
 
+
+
 conda create -n trim-galore -c bioconda trim-galore
 
 ## activate the conda environment
@@ -38,3 +40,18 @@ trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
 trim_galore --fastqc BEN_CI16_sub_1.fq.gz
 ## To chcek the out 
 zcat BEN_CI16_sub_1_trimmed.fq.gz | less
+
+## For bulk data trimming ##
+for file in BEN_CI18_sub_1.fq.gz BEN_NW13_sub_1.fq.gz BEN_SI9_sub_1.fq.gz BEN_NW10_sub_1.fq.gz BEN_SI18_sub_1.fq.gz LGS1_sub_1.fq.gz BEN_NW12_sub_1.fq.gz BEN_SI19_sub_1.fq.gz; do
+    paired_file=${file/_1.fq.gz/_2.fq.gz}
+    trim_galore --paired "$file" "$paired_file"
+done
+file List:
+The loop iterates only over _1.fq.gz files (read 1).
+Example: BEN_CI18_sub_1.fq.gz, BEN_NW13_sub_1.fq.gz, etc.
+paired_file Variable:
+
+Replaces _1.fq.gz with _2.fq.gz to find the corresponding pair.
+trim_galore Command:
+
+Trims both read 1 ($file) and read 2 ($paired_file) together.
