@@ -55,3 +55,10 @@ Replaces _1.fq.gz with _2.fq.gz to find the corresponding pair.
 trim_galore Command:
 
 Trims both read 1 ($file) and read 2 ($paired_file) together.
+
+#2
+for file in *_1.fq.gz; do
+  trim_galore --paired "$file" "${file/_1.fq.gz/_2.fq.gz}"
+done
+
+
