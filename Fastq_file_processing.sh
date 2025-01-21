@@ -33,3 +33,6 @@ conda create -n trim-galore -c bioconda trim-galore
 conda activate trim-galore
 
 trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
+
+## triming for single fasta file
+trim_galore --fastqc BEN_CI16_sub_1.fq.gz
