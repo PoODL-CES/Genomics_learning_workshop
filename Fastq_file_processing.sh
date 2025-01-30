@@ -24,14 +24,13 @@ conda activate fastqc
 ## run fastqc
 fastqc *.fq.gz
 
+## Deactivate the conda environment
+conda deactivate fastqc
+
 #### Install trim_galore
-
-
-
 conda create -n trim-galore -c bioconda trim-galore
 
 ## activate the conda environment
-
 conda activate trim-galore
 
 trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
@@ -63,4 +62,5 @@ done
 # "$file" refers to the current forward read (read 1).
 # ${file/_1.fq.gz/_2.fq.gz} dynamically generates the corresponding reverse read (read 2) by replacing _1 with _2 in the file name.
 
-
+## Deactivate the conda environment
+conda deactivate trim-galore
