@@ -26,7 +26,7 @@ samtools sort BEN_NW_10_aligned_reads.bam -o BEN_NW_10_sorted_reads.bam
 
 
 
-
+### INDEX AFTER MARKDUPLICATES USING PICARD
 
 samtools index BEN_NW_10_sorted_reads.bam
 samtools flagstat BEN_NW_10_sorted_reads.bam
