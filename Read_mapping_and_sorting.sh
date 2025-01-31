@@ -29,9 +29,16 @@ samtools sort BEN_NW_10_aligned_reads.bam -o BEN_NW_10_sorted_reads.bam
 
 ## Deactivate the conda environment
 
-### MARKDUPLICATES USING PICARD
+##### MARKDUPLICATES USING GATK4
+### Install and activate gatk4
+conda create -n gatk4 -c bioconda gatk4
+conda activate gatk4
+
+### Mark and remove duplicates
+gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam -M BEN_NW_10_duplication_metrics.txt --REMOVE_DUPLICATES true
+# Markduplicates is necessary for marking duplicate reads which arise during pcr amplification step
 
 ### INDEX AFTER MARKDUPLICATES USING PICARD
+samtools index BEN_NW_10_sorted_deduplicated.bam
+# indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
 
-samtools index BEN_NW_10_sorted_reads.bam
-samtools flagstat BEN_NW_10_sorted_reads.bam
