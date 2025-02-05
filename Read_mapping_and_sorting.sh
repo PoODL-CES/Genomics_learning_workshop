@@ -5,7 +5,18 @@ conda create -n bwa -c bioconda bwa
 ## Activate the conda environment
 conda activate bwa
 
+#aligning reads with bwa mem (burrows wheeler aligner)
 bwa mem GCA_021130815.1_PanTigT.MC.v3_genomic.fna ../fq_files/BEN_NW10_sub_1_val_1.fq.gz ../fq_files/BEN_NW10_sub_2_val_2.fq.gz > BEN_NW_10_aligned_reads.sam
+
+# Mapping all reads to reference genome in single step
+
+for file1 in ../fq_files/*_sub_1_val_1.fq.gz; do
+    file2=${file1/_sub_1_val_1.fq.gz/_sub_2_val_2.fq.gz}
+    sample_name=$(basename "$file1" _sub_1_val_1.fq.gz)
+    
+    bwa mem GCA_021130815.1_PanTigT.MC.v3_genomic.fna "$file1" "$file2" > "${sample_name}_aligned_reads.sam"
+done
+
 
 ## Deactivate the conda environment
 
