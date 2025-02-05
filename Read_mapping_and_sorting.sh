@@ -33,6 +33,12 @@ samtools view -S -b BEN_NW_10_aligned_reads.sam > BEN_NW_10_aligned_reads.bam
 ## We use BAM files because these files are much smaller in size compared to SAM files, saving storage space.
 ## They are compressed and indexed, which allows faster access and processing during downstream analysis.
 
+## Convert all sam files to bam
+
+for file in *.sam; do 
+    samtools view -S -b "$file" > "${file%.sam}.bam"
+done
+
 ## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
 samtools sort BEN_NW_10_aligned_reads.bam -o BEN_NW_10_sorted_reads.bam
 ## sort: This samtools subcommand is used to sort the alignment data based on genomic coordinates.
