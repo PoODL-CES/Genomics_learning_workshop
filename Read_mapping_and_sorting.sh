@@ -61,7 +61,13 @@ conda activate gatk4
 gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam -M BEN_NW_10_duplication_metrics.txt --REMOVE_DUPLICATES true
 # Markduplicates is necessary for marking duplicate reads which arise during pcr amplification step
 
+## Marking and removing duplicates all at once
+parallel 'gatk MarkDuplicates -I {} -O {.}_deduplicated.bam -M {.}_duplication_metrics.txt --REMOVE_DUPLICATES true' ::: *_sorted.bam
+
 ### INDEX AFTER MARKDUPLICATES
 samtools index BEN_NW_10_deduplicated.bam
 # indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
+
+## Indexing the deduplicated files all at once
+parallel 'samtools index {}' ::: *_deduplicated.bam
 
