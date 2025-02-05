@@ -41,6 +41,12 @@ done
 
 ## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
 samtools sort BEN_NW_10_aligned_reads.bam -o BEN_NW_10_sorted_reads.bam
+
+## Sorting the sam files
+for file in *.bam; do
+    samtools sort "$file" -o "${file%.bam}_sorted.bam"
+done
+
 ## sort: This samtools subcommand is used to sort the alignment data based on genomic coordinates.
 # Sorting the reads improves the efficiency of downstream analysis like variant calling etc. by giving access to specific regions of the genome.
 
