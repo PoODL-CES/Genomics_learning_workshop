@@ -20,10 +20,6 @@ done
 
 ## Deactivate the conda environment
 
-### Install samtools
-FILL UP THE INSTALLATION
-
-
 ## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
 samtools view -S -b BEN_NW_10_aligned_reads.sam > BEN_NW_10_aligned_reads.bam
 ### view: This is the subcommand in samtools used to convert, filter, or view alignment files.
@@ -71,3 +67,6 @@ samtools index BEN_NW_10_deduplicated.bam
 ## Indexing the deduplicated files all at once
 parallel 'samtools index {}' ::: *_deduplicated.bam
 
+## for statistics file
+parallel 'samtools stats {} > {.}_stats.txt' ::: *_deduplicated.bam
+## This will generate a statistics file which will have information about the number of reads that mapped to the reference geome, number of unmapped reads etc.
