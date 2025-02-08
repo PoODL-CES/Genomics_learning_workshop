@@ -38,7 +38,7 @@ done
 ## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
 samtools sort BEN_NW_10_aligned_reads.bam -o BEN_NW_10_sorted_reads.bam
 
-## Sorting the sam files
+## Sorting the bam files
 for file in *.bam; do
     samtools sort "$file" -o "${file%.bam}_sorted.bam"
 done
