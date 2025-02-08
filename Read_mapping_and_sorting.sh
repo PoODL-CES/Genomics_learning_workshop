@@ -19,6 +19,8 @@ done
 
 
 ## Deactivate the conda environment
+conda deactivate
+
 
 ## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
 samtools view -S -b BEN_NW_10_aligned_reads.sam > BEN_NW_10_aligned_reads.bam
