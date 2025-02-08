@@ -50,6 +50,7 @@ done
 # Sorting the reads improves the efficiency of downstream analysis like variant calling etc. by giving access to specific regions of the genome.
 
 ## Deactivate the conda environment
+conda deactivate 
 
 ##### MARKDUPLICATES USING GATK4
 ### Install and activate gatk4
