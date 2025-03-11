@@ -27,6 +27,7 @@ fastqc *.fq.gz
 ## Deactivate the conda environment
 conda deactivate fastqc
 
+#### Trimming Raw fastq files to remove adapter sequences and low quality bases form the ends
 #### Install trim_galore
 conda create -n trim-galore -c bioconda trim-galore
 
