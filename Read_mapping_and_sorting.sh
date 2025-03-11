@@ -104,3 +104,6 @@ which configureStrelkaGermlineWorkflow.py
 #--runDir strelka_germline: Specifies the output directory where the workflow will be set up. Inside this directory, Strelka will create scripts and configuration files needed to run the variant calling pipeline.
 
 strelka_germline/runWorkflow.py -m local -j 8
+#strelka_germline/runWorkflow.py: This script was generated during the configureStrelkaGermlineWorkflow.py step. It is the main script that runs the variant calling process.
+#-m local: Specifies that the workflow will be executed on the local machine.
+#-j 8: Defines the number of parallel threads (CPUs) to use. 
