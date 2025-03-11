@@ -44,7 +44,7 @@ trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
 trim_galore --fastqc BEN_CI16_sub_1.fq.gz
 
 ## To chcek the output 
-less BEN_CI16_sub_1_trimmed.fq.gz
+less BEN_CI16_sub_1_val_1.fq.gz
 
 ## For bulk data trimming ##
 for file in BEN_CI18_sub_1.fq.gz BEN_NW13_sub_1.fq.gz BEN_SI9_sub_1.fq.gz BEN_NW10_sub_1.fq.gz BEN_SI18_sub_1.fq.gz LGS1_sub_1.fq.gz BEN_NW12_sub_1.fq.gz BEN_SI19_sub_1.fq.gz; do
