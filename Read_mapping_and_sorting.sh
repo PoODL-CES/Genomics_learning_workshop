@@ -1,4 +1,5 @@
-#### Map reads using bwa mem
+#### Map trimmed reads using bwa mem
+
 ### Install bwa
 conda create -n bwa -c bioconda bwa
 
