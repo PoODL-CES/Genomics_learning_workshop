@@ -1,3 +1,4 @@
+#### The raw fastq reads sometimes have adapter seqeunces and there are low quality bases towards the ends which needs to be removed
 #### Install conda (https://docs.anaconda.com/miniconda/install/)
 ### For linux systems
 
