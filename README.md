@@ -9,5 +9,6 @@ Basic linux tutorial : Linux_basics.sh \
 Possible solutions to basic linux tutorial : Linux_basics_solutions.sh \
 Advanced linux tutorial : Linux_advanced.sh \
 Possible solutions to Advanced linux tutorial: Linux_advanced_solutions.sh \
-Initial read processing of illumina seqeuncing reads: Fastq_file_processing.sh 
+Initial read processing of illumina seqeuncing reads: Fastq_file_processing.sh \
+Mapping reads to reference genome: Read_mapping_and_sorting.sh \
 Download the datasets from https://zenodo.org/records/14258052
