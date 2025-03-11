@@ -13,7 +13,7 @@ source ~/miniconda3/bin/activate
 ### To initialize conda on all available shells, run the following command:
 miniconda3/bin/./conda init --all
 
-
+#### Obtain summary of fastq files. Count the number of reads in fastq file, the distribution of read lengths and quality
 #### For getting summary of fastq files, install fastqc (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
 ## Install fastqc
@@ -28,7 +28,7 @@ fastqc *.fq.gz
 ## Deactivate the conda environment
 conda deactivate fastqc
 
-#### Trimming Raw fastq files to remove adapter sequences and low quality bases form the ends
+#### Trim the raw fastq reads to remove adapter sequences and low quality bases form the ends
 #### Install trim_galore
 conda create -n trim-galore -c bioconda trim-galore
 
