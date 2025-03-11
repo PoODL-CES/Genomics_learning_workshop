@@ -2,7 +2,7 @@ This is basic workshop for processing Next-generation sequencing reads from illu
 
 It is a pre-requiste for the workshop to install some form of linux/shell terminal for example those using windows may try mobaxterm (https://mobaxterm.mobatek.net), mac and linux systems should have a terminal already.
 
-You may want to learn quickly about how illuminating sequencing works: https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s
+You may want to learn quickly about how illumina sequencing works: https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s
 
 
 Basic linux tutorial : Linux_basics.sh \
