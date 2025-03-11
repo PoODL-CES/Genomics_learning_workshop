@@ -47,21 +47,21 @@ trim_galore --fastqc BEN_CI16_sub_1.fq.gz
 less BEN_CI16_sub_1_val_1.fq.gz
 
 ## For bulk data trimming ##
+
+# OPTION 1: Name all files in the following command
 for file in BEN_CI18_sub_1.fq.gz BEN_NW13_sub_1.fq.gz BEN_SI9_sub_1.fq.gz BEN_NW10_sub_1.fq.gz BEN_SI18_sub_1.fq.gz LGS1_sub_1.fq.gz BEN_NW12_sub_1.fq.gz BEN_SI19_sub_1.fq.gz; do
     paired_file=${file/_1.fq.gz/_2.fq.gz}
     trim_galore --paired "$file" "$paired_file"
 done
-file List:
-The loop iterates only over _1.fq.gz files (read 1).
-Example: BEN_CI18_sub_1.fq.gz, BEN_NW13_sub_1.fq.gz, etc.
-paired_file Variable:
+#file List:
+#The loop iterates only over _1.fq.gz files (read 1).
+#Example: BEN_CI18_sub_1.fq.gz, BEN_NW13_sub_1.fq.gz, etc.
+#paired_file Variable:
+#Replaces _1.fq.gz with _2.fq.gz to find the corresponding pair.
+#trim_galore Command:
+#Trims both read 1 ($file) and read 2 ($paired_file) together.
 
-Replaces _1.fq.gz with _2.fq.gz to find the corresponding pair.
-trim_galore Command:
-
-Trims both read 1 ($file) and read 2 ($paired_file) together.
-
-#2
+#2 OPTION 2: Use * as wildcard to consider any file with the format *_1.fq.gz as an input
 for file in *_1.fq.gz; do
   trim_galore --paired "$file" "${file/_1.fq.gz/_2.fq.gz}"
 done
