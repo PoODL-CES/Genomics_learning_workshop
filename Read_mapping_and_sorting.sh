@@ -28,7 +28,7 @@ conda deactivate
 conda create -n samtools -c bioconda samtools
 
 ## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
-samtools view -S -b BEN_NW_10_aligned_reads.sam > BEN_NW_10_aligned_reads.bam
+samtools view -S -b BEN_NW_10_aligned_reads.sam | samtools sort -o BEN_NW_10_sorted_reads.bam
 ### view: This is the subcommand in samtools used to convert, filter, or view alignment files.
 ## -S: Specifies that the input file is in SAM (Sequence AlignmentMap) format.
 ## -b: Specifies that the output file should be in BAM (Binary Alignment Map) format, which is a compressed version of the SAM format.
@@ -36,18 +36,10 @@ samtools view -S -b BEN_NW_10_aligned_reads.sam > BEN_NW_10_aligned_reads.bam
 ## We use BAM files because these files are much smaller in size compared to SAM files, saving storage space.
 ## They are compressed and indexed, which allows faster access and processing during downstream analysis.
 
-## Convert all sam files to bam
+## Convert all sam files to bam and sort the reads
 
 for file in *.sam; do 
-    samtools view -S -b "$file" > "${file%.sam}.bam"
-done
-
-## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
-samtools sort BEN_NW_10_aligned_reads.bam -o BEN_NW_10_sorted_reads.bam
-
-## Sorting the bam files
-for file in *.bam; do
-    samtools sort "$file" -o "${file%.bam}_sorted.bam"
+    samtools view -S -b "$file" | samtools sort -o "${file%.sam}_sorted.bam"
 done
 
 ## sort: This samtools subcommand is used to sort the alignment data based on genomic coordinates.
@@ -66,6 +58,8 @@ gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam 
 # Markduplicates is necessary for marking duplicate reads which arise during pcr amplification step
 
 ## Marking and removing duplicates all at once
+## we are using the parallel command here because of small group size and small files. 
+## However this is memory intensive and computers can crash if run by big groups on heavy files
 parallel 'gatk MarkDuplicates -I {} -O {.}_deduplicated.bam -M {.}_duplication_metrics.txt --REMOVE_DUPLICATES true' ::: *_sorted.bam
 
 ### INDEX AFTER MARKDUPLICATES
@@ -79,7 +73,7 @@ parallel 'samtools index {}' ::: *_deduplicated.bam
 parallel 'samtools stats {} > {.}_stats.txt' ::: *_deduplicated.bam
 ## This will generate a statistics file which will have information about the number of reads that mapped to the reference geome, number of unmapped reads etc.
 
-#for knowing coverage per chromosome/scaffold
+#### for estimating sequencing statistics like coverage per chromosome/scaffold
 conda install -c bioconda qualimap
 
 qualimap bamqc -bam BEN_NW12_aligned_reads_sorted_deduplicated.bam -outdir qualimap_results -outformat HTML
