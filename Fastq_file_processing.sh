@@ -34,12 +34,17 @@ conda create -n trim-galore -c bioconda trim-galore
 ## activate the conda environment
 conda activate trim-galore
 
+## for DNA seqeunced on illumina sequencers with illumina adapters the following maybe done.
+## for other library preparations with different adapters, adapter sequences need to be specified.
+## for BGI seq different adapters need to be declared.
+
 trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
 
 ## triming for single fasta file
 trim_galore --fastqc BEN_CI16_sub_1.fq.gz
-## To chcek the out 
-zcat BEN_CI16_sub_1_trimmed.fq.gz | less
+
+## To chcek the output 
+less BEN_CI16_sub_1_trimmed.fq.gz
 
 ## For bulk data trimming ##
 for file in BEN_CI18_sub_1.fq.gz BEN_NW13_sub_1.fq.gz BEN_SI9_sub_1.fq.gz BEN_NW10_sub_1.fq.gz BEN_SI18_sub_1.fq.gz LGS1_sub_1.fq.gz BEN_NW12_sub_1.fq.gz BEN_SI19_sub_1.fq.gz; do
