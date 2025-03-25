@@ -47,3 +47,19 @@ for bam in *_aligned_reads_sorted_deduplicated.bam; do  # loops through the requ
 done
 
 # an output directory will be present for all input bam files containing results of variant calling.
+
+### Variant filtering
+
+#1) filtering passed from non passed
+#using bcftools
+
+conda install -c bioconda bcftools
+bcftools --version (#this is confirmatory step)
+conda activate bioinfo
+bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
+
+#bcftools: Calls the bcftools program, a widely used tool for processing VCF/BCF files.
+#view: Opens and processes the VCF file.
+#-f PASS: Filters out variants and keeps only those with "PASS" in the FILTER column.
+#-o: passed_variants.vcf.gz	Specifies the output file name where filtered variants will be saved.
+#"input_file_name".vcf.gz: The name of the input compressed VCF file containing variant calls.
