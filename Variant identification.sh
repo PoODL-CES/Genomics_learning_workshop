@@ -63,3 +63,18 @@ bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
 #-f PASS: Filters out variants and keeps only those with "PASS" in the FILTER column.
 #-o: passed_variants.vcf.gz	Specifies the output file name where filtered variants will be saved.
 #"input_file_name".vcf.gz: The name of the input compressed VCF file containing variant calls.
+
+#2) filtering out indels
+bcftools view -v snps -o snps_only.vcf.gz passed_variants.vcf.gz
+
+#3) Filtering out Minor allele counts
+ bcftools view -i 'MAC >= 3' -o mac_filtered.vcf.gz snps_only.vcf.gz
+
+#4) genotype quality filter
+bcftools view -i 'FMT/GQ >= 30' -o gq_filtered.vcf.gz mac_filtered.vcf.gz
+
+#5) base quality filter
+bcftools view -i 'QUAL >= 30' -o bq_filtered.vcf.gz gq_filtered.vcf.gz
+
+#6) count the number of SNP's
+bcftools view -H -v snps bq_filtered.vcf.gz | wc -l
