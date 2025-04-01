@@ -65,15 +65,19 @@ bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
 #"input_file_name".vcf.gz: The name of the input compressed VCF file containing variant calls.
 
 #2) filtering out indels
+#to avoid alignment issues
 bcftools view -v snps -o snps_only.vcf.gz passed_variants.vcf.gz
 
 #3) Filtering out Minor allele counts
+ # a filter to remove very rare variants, which might be due to sequencing errors rather than real genetic variation. Rare variants are often sequencing errors rather than real mutations.
  bcftools view -i 'MAC >= 3' -o mac_filtered.vcf.gz snps_only.vcf.gz
 
 #4) genotype quality filter
+#ensure confidence in genotype calls
 bcftools view -i 'FMT/GQ >= 30' -o gq_filtered.vcf.gz mac_filtered.vcf.gz
 
 #5) base quality filter
+#removes low quality base calls
 bcftools view -i 'QUAL >= 30' -o bq_filtered.vcf.gz gq_filtered.vcf.gz
 
 #6) count the number of SNP's
