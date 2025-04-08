@@ -11,4 +11,5 @@ Advanced linux tutorial : Linux_advanced.sh \
 Possible solutions to Advanced linux tutorial: Linux_advanced_solutions.sh \
 Initial read processing of illumina seqeuncing reads: Fastq_file_processing.sh \
 Mapping reads to reference genome: Read_mapping_and_sorting.sh \
+Identify variants: Variant_identification.sh \
 Download the datasets from https://zenodo.org/records/14258052
