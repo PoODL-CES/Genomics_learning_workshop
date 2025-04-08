@@ -107,3 +107,9 @@ lower_bound <- quantile(depths, 0.025, na.rm = TRUE)
 upper_bound <- quantile(depths, 0.975, na.rm = TRUE)
 cat("Middle 95% range:", lower_bound, "to", upper_bound, "\n")
 #Middle 95% range: 12.3 to 22.89705
+
+#filter rows with range
+mid_95 <- depth_data[depths >= lower_bound & depths <= upper_bound, ]
+
+#save output
+write.table(mid_95, file = "mid_95_percentile_loci.txt", row.names = FALSE, quote = FALSE)
