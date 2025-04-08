@@ -112,4 +112,7 @@ cat("Middle 95% range:", lower_bound, "to", upper_bound, "\n")
 mid_95 <- depth_data[depths >= lower_bound & depths <= upper_bound, ]
 
 #save output
-write.table(mid_95, file = "mid_95_percentile_loci.txt", row.names = FALSE, quote = FALSE)
+write.table(mid_95, file = "mid_95_percentile_loci.txt", row.names = FALSE, quote = FALSE)
+
+#output file:  mid_95_percentile_loci.txt
+
