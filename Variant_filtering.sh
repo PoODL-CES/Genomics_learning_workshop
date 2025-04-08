@@ -1,4 +1,5 @@
 ### Variant filtering
+### Download the vcf file to be used from https://zenodo.org/records/15173226
 
 #1) filtering passed from non passed
 #using bcftools
