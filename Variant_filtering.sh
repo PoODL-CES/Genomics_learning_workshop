@@ -95,3 +95,10 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 #find the percentile depth between 0.05 and 0.975, the middle 95 percentile.
 #below 0.05 because low conf
 #above 97.5 because of presence of repetitive regions or less complex regions
+#Using R 
+> depth_data <- read.table("machali_mean_depth.ldepth.mean", header = TRUE)
+> depths <- depth_data$MEAN_DEPTH
+> lower_bound <- quantile(depths, 0.025, na.rm = TRUE)
+> upper_bound <- quantile(depths, 0.975, na.rm = TRUE)
+> cat("Middle 95% range:", lower_bound, "to", upper_bound, "\n")
+Middle 95% range: 12.3 to 22.89705
