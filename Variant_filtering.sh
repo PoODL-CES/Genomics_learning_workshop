@@ -96,6 +96,11 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 #below 0.05 because low conf
 #above 97.5 because of presence of repetitive regions or less complex regions
 #Using R 
+conda activate vcftools
+conda activate R
+#or
+#conda activate r_env
+R
 > depth_data <- read.table("machali_mean_depth.ldepth.mean", header = TRUE)
 > depths <- depth_data$MEAN_DEPTH
 > lower_bound <- quantile(depths, 0.025, na.rm = TRUE)
