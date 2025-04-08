@@ -124,11 +124,16 @@ done
 #### Plot the data in the variant_counts.txt using ggplot2
 
 ## create a new conda environment ggplot2
-
+conda create -n r_env r-base
+conda activate r_env
+R --version
 conda create -n ggplot2 -c conda-forge r-ggplot2
 conda activate ggplot2
 
-# plot the data in the variants.txt file
+#pranav
+R -e "library(ggplot2); library(scales); data <- read.table('variant_counts.txt', header=FALSE, skip=1, col.names=c('Missingness', 'Variants')); data\$Missingness <- as.numeric(as.character(data\$Missingness)); data\$Variants <- as.numeric(as.character(data\$Variants)); p <- ggplot(data, aes(x=Missingness, y=Variants)) + geom_line(color='blue') + geom_point(color='red') + ggtitle('Number of Passed Variants vs. Missingness Filter') + xlab('Max Missingness (%)') + ylab('Number of Variants') + scale_y_continuous(labels = comma) + scale_x_continuous(limits = c(10, 90)) + theme_minimal(); ggsave('variant_plot.png', plot=p)"
+
+# plot the data in the variants.txt file (Nithin)
  R -e "library(ggplot2); library(scales); data <- read.table('variant_counts.txt', header=FALSE, col.names=c('Missingness', 'Variants')); p <- ggplot(data, aes(x=Missingness, y=Variants)) + geom_line(color='blue') + geom_point(color='red') + ggtitle('Number of Passed Variants vs. Missingness Filter') + xlab('Max Missingness (%)') + ylab('Number of Variants') + scale_y_continuous(labels = comma) + scale_x_continuous(limits = c(10, 90)) + theme_minimal(); ggsave('variant_plot.png', plot=p)"
 
 # this will generate a variant_plot.png which can be visualized.
