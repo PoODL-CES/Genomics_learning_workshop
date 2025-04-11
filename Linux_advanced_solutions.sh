@@ -10,6 +10,8 @@ GGACCTTCTGTCATTTCACTCCTTCTGAAGTAAGGAGTGAAGTAAACACGAAGTAAACACGACAGGTTAGTCCTATTCCT
 + #seperator
 AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFAFJJJJJJJJJJJJJJJJFJJJJJJJJJFJJJJJJJJJFFFJJJJJJJJJJJ #base call quality scores (ASCII characters)
 
+#After 100-150 base pairs, the accuracy of base calling decreases. Trimming is usually done to retain only high-quality bases.
+
 # Solution
 
 ##1) Number of sequencing reads in the fastq files
@@ -45,7 +47,7 @@ zcat file.fastq.gz | awk 'NR % 4 == 2 {if (length($0) != 150) print length($0)}'
 #print length($0): Prints the length of sequences that are not 150.
 
 #5) Reads contaminated with illumination adapters (Adapter sequence: CTGTCTCTTATACACATCT)
-
+#Illumina sequencing can read into adapter sequences if the insert is shorter than the read length, so sequencing reads past the DNA fragment into the adapter. Or due to improper adapter trimming.
 
 
 
