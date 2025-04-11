@@ -10,50 +10,44 @@ GGACCTTCTGTCATTTCACTCCTTCTGAAGTAAGGAGTGAAGTAAACACGAAGTAAACACGACAGGTTAGTCCTATTCCT
 + #seperator
 AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFAFJJJJJJJJJJJJJJJJFJJJJJJJJJFJJJJJJJJJFFFJJJJJJJJJJJ #base call quality scores (ASCII characters)
 
+# Solution
 
-#### Count the number of sequencing reads in the fastq files
-
-### Solution
-## 1
+##1) Number of sequencing reads in the fastq files
 less LGS1_sub_1.fq.gz | grep '^@' | wc -l 
 # grep '^@' Finds all lines starting with @ in the file.
 # ^@: Matches lines where @ appears at the beginning.
 # wc -l: Counts the number of matching lines.
 
-## 2
+#or
+
+#1) 
 echo $(( $(zcat LGS1_sub_1.fq.gz | wc -l) / 4 ))
 #zcat: to decompress .gz file
 #wc-1: counts the number of lines in decompressed output
 #divsion by 4 to calculate total number of reads (since each fastq entry will have 4 lines)
 #echo to show the result of the calculation
 
-## 3
+#or
+
+#1)
 less LGS1_sub_1.fq.gz | wc -l | awk '{print $1 / 4}'
 
-#### How many reads are shorter than 150bp?
-
-### Solution
-## 1
+#2) Reads shorter than 150 BP
 zcat BEN_CI16_sub_1.fq.gz | awk 'NR % 4 == 2 {print length($0)}' | awk '$1<150' | wc -l
 ## NR % 4 == 2: This will check every 2nd line of the each four line of FASTAQ and length($0): This will returns the length of the sequence.
 
-#### How many reads are longer than 150bp?
-
-### Solution
-## 1
-# The number of raeds which length are of sequence more than 150
+#3) Reads longer than 150 BP
 zcat BEN_CI16_sub_1.fq.gz | awk 'NR % 4 == 2 {print length($0)}' | awk '$1>150' | wc -l 
-# Similar to solution 1 of this part.
 
-#### How many reads are not equal to 150bp?
-
-### Solution
-## 1
+#4) Reads not equal to 150 BP
 zcat file.fastq.gz | awk 'NR % 4 == 2 {if (length($0) != 150) print length($0)}' | wc -l
 #if (length($0) != 150): Checks if the length of the sequence is not equal to 150.
 #print length($0): Prints the length of sequences that are not 150.
 
-#### How many reads are contaminated with illumination adapters
-#### The adapter sequence is CTGTCTCTTATACACATCT
+#5) Reads contaminated with illumination adapters (Adapter sequence: CTGTCTCTTATACACATCT)
+
+
+
+
 
 
