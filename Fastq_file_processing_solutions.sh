@@ -25,6 +25,8 @@ conda activate fastqc
 ## run fastqc
 fastqc *.fq.gz
 
+## Output files generated after running fastqc = "BEN_CI16_sub_1_fastqc.zip"  
+
 ## Deactivate the conda environment
 conda deactivate fastqc
 
