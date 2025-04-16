@@ -71,5 +71,9 @@ done
 # "$file" refers to the current forward read (read 1).
 # ${file/_1.fq.gz/_2.fq.gz} dynamically generates the corresponding reverse read (read 2) by replacing _1 with _2 in the file name.
 
+# Output files generated after running trim-galore : 
+#BEN_CI16_sub_1.fq.gz_trimming_report.txt (summary report generated during the trimming process)
+#BEN_CI16_sub_1_val_1.fq.gz (val_1: refers to a validated or quality-checked file. In tools like Trim Galore, files are renamed with val_1 post trimming process)
+
 ## Deactivate the conda environment
 conda deactivate trim-galore
