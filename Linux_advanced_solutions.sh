@@ -13,13 +13,12 @@ AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJJJJJJJJJ
 #After 100-150 base pairs, the accuracy of base calling decreases. Trimming is usually done to retain only high-quality bases.
 
 #Note: after downloading all the .gz files, they might get saved something as 'BEN_CI16_sub_1.fq.gz?download=1'. To appropriately rename all the .gz files in a single-go, use the following command:
- for file in *.fq.gz?download=1; do
->   mv "$file" "${file%\?download=1}"
-> done
-#for file in *.fq.gz?download=1: Loops through all files that match the download pattern.
-#mv "$file" "${file%\?download=1}": Renames each file by stripping the ?download=1 using ${file%\?download=1}, which is shell syntax for pattern trimming.
 
-#finally you will have files named something as BEN_CI16_sub_1.fq.gz
+for file in *\?download=1; do
+    newname=$(echo "$file" | sed "s/?download=1//")
+    mv "$file" "$newname"
+done
+
 
 # Solutions
 
