@@ -60,6 +60,9 @@ conda activate trim-galore
 ## for BGI seq different adapters need to be declared.
 
 trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
+#trim_galore: executes Trim Galore tool. it has two tools; Cutadapt (for adapter trimming) and FastQC (for QC checks)
+#--paired: specifies input files are paired-end reads. 
+#--illumina: specifies that the illumina adapters needs to be trimmed. 
 
 ## triming for single fasta file
 trim_galore --fastqc BEN_CI16_sub_1.fq.gz
