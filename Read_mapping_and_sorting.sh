@@ -15,6 +15,9 @@
 # TASK 3: sort the bam files
 
 ## PCR replicates and optical replicates need to be removed from analysis as they may falsely infale the depth.
+#PCR duplicates (a.k.a PCR duplicates): They are identical reads or read pairs resulting from the overamplification during PCR step of library preparation, and not from the actual biological sample. During sequencing, they appear as though the same fragment was read multiple times.
+#some fragments get amplified more randomly or due to better "amplifiability". Poor-quality enzymes or unoptimized PCR conditions may lead to non-specific amplification.
+#Optical duplicates: Specifically arisen from sequencing machine artifacts. When a cluster is wrongly interpreted as multiple nearby clusters (due to how it fluoresces), you get multiple reads that look like PCR duplicates but were actually created during imaging.
 ## This step is to be avoided for ddRAD, RADseq and amplicon sequencing since most reads are PCR duplicates or match other reads at the initial few bases
 
 # TASK 4: Remove or mark the duplicate reads
