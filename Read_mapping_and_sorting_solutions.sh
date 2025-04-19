@@ -50,6 +50,11 @@ for file in *.sam; do
     samtools view -S -b "$file" | samtools sort -o "${file%.sam}_sorted.bam"
 done
 
+#samtools view: samtools view converts SAM file to BAM format.
+#-S -b "$file": -s tells samtools that the input is in SAM format. -b tells that the output should be in BAM format. "$file" is the name of the current .sam file in the loop.
+#samtools sort: sorts the BAM file by genomic coordinates.
+#"${file%.sam}: strips off the .sam extension
+#then _sorted.bam is added.
 ## sort: This samtools subcommand is used to sort the alignment data based on genomic coordinates.
 #Sorting necessary for BAM file indexing, downstream analysis, visualization, duplicate marking.
 
