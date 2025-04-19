@@ -34,7 +34,7 @@ conda deactivate
 #Task 2: Convert sam to bam 
 # Install samtools
 conda create -n samtools -c bioconda samtools
-
+conda activate samtools
 ## EXPLAIN THE SAMTOOLS OPTIONS USED. WHY IS THIS STEP NECESSARY?
 samtools view -S -b BEN_NW_10_aligned_reads.sam | samtools sort -o BEN_NW_10_sorted_reads.bam
 ### view: This is the subcommand in samtools used to convert, filter, or view alignment files.
