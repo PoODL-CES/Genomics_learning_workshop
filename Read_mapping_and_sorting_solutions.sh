@@ -74,7 +74,15 @@ gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam 
 ## we are using the parallel command here because of small group size and small files. 
 ## However this is memory intensive and computers can crash if run by big groups on heavy files
 conda create -n parallel -c bioconda parallel
-parallel 'gatk MarkDuplicates -I {} -O {.}_deduplicated.bam -M {.}_duplication_metrics.txt --REMOVE_DUPLICATES true' ::: *_sorted.bam
+conda activate parallel
+parallel 'source ~/miniconda3/etc/profile.d/conda.sh && conda activate bwa && gatk MarkDuplicates -I {} -O {.}_deduplicated.bam -M {.}_duplication_metrics.txt --REMOVE_DUPLICATES true' ::: *_sorted.bam
+#parallel '...' ::: *_sorted.bam: takes each sorted bam file, replaces {} with the file name, replaces {.} with the filename without the .bam extension, run the specified command in parallel for each file
+#'source ~/miniconda3/etc/profile.d/conda.sh':Loads Conda’s environment setup script. Without this, conda activate won’t work in a non-interactive shell like the ones parallel launches.
+#gatk MarkDuplicates: 
+#-I {} — input is the BAM file.
+#-O {.}_deduplicated.bam — output file with duplicates removed.
+#-M {.}_duplication_metrics.txt — metrics file.
+#--REMOVE_DUPLICATES true — tells GATK to physically remove duplicates from the output BAM file, not just mark them.
 
 #or
 
@@ -84,7 +92,7 @@ for file in *_sorted.bam; do
         -I "$file" \
         -O "${base}_deduplicated.bam" \
         -M "${base}_duplication_metrics.txt" \
-        --REMOVE_DUPLICATES true
+        --REMOVE_DUPLICATES true
 done
 
 #base=${file%_sorted.bam}: ${file%_sorted.bam} removes _sorted.bam from the filename.
@@ -100,6 +108,8 @@ samtools index BEN_NW_10_deduplicated.bam
 # indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
 
 ## Indexing the deduplicated files all at once
+samtools index *_deduplicated.bam
+#or
 parallel 'samtools index {}' ::: *_deduplicated.bam
 
 ## for statistics file
@@ -110,6 +120,10 @@ parallel 'samtools stats {} > {.}_stats.txt' ::: *_deduplicated.bam
 conda install -c bioconda qualimap
 
 qualimap bamqc -bam BEN_NW12_aligned_reads_sorted_deduplicated.bam -outdir qualimap_results -outformat HTML
+
+#for bulk statistics
+
+qualimap bamqc -bam *_aligned_reads_sorted_deduplicated.bam -outdir qualimap_results -outformat HTML
 
 #-bam : to input bam file
 #-outdir : Directory for results
