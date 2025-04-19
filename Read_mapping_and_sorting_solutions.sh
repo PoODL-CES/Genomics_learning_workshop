@@ -75,6 +75,25 @@ gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam 
 ## However this is memory intensive and computers can crash if run by big groups on heavy files
 parallel 'gatk MarkDuplicates -I {} -O {.}_deduplicated.bam -M {.}_duplication_metrics.txt --REMOVE_DUPLICATES true' ::: *_sorted.bam
 
+#or
+
+for file in *_sorted.bam; do
+    base=${file%_sorted.bam}
+    gatk MarkDuplicates \
+        -I "$file" \
+        -O "${base}_deduplicated.bam" \
+        -M "${base}_duplication_metrics.txt" \
+        --REMOVE_DUPLICATES true
+done
+
+#base=${file%_sorted.bam}: ${file%_sorted.bam} removes _sorted.bam from the filename.
+#-I "$file": takes the input *_sorted.bam file
+#-O "${base}_deduplicated.bam" \: outputs the deduplicated BAM (with duplicates removed).
+#-M "${base}_duplication_metrics.txt": writes duplication statistics to this file.
+#--REMOVE_DUPLICATES true: removes the duplicate reads instead of just marking them.
+
+#files would be viewed as BEN_NW_10_sorted_reads.bam 
+
 ##Task 5: INDEX AFTER MARKDUPLICATES
 samtools index BEN_NW_10_deduplicated.bam
 # indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
