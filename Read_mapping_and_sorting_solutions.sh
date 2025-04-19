@@ -1,4 +1,4 @@
-#### Map trimmed reads using bwa mem
+####Task 1: Map trimmed reads using bwa mem
 ## The datasets from https://zenodo.org/records/14258052 contain the reference genome file and its index files
 
 ### Install bwa
