@@ -51,7 +51,7 @@ for file in *.sam; do
 done
 
 ## sort: This samtools subcommand is used to sort the alignment data based on genomic coordinates.
-# Sorting the reads improves the efficiency of downstream analysis like variant calling etc. by giving access to specific regions of the genome.
+#Sorting necessary for BAM file indexing, downstream analysis, visualization, duplicate marking.
 
 ## Deactivate the conda environment
 conda deactivate 
