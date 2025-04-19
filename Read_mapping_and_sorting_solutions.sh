@@ -44,7 +44,7 @@ samtools view -S -b BEN_NW_10_aligned_reads.sam | samtools sort -o BEN_NW_10_sor
 ## We use BAM files because these files are much smaller in size compared to SAM files, saving storage space.
 ## They are compressed and indexed, which allows faster access and processing during downstream analysis.
 
-## Convert all sam files to bam and sort the reads
+## (Task 3) Convert all sam files to bam and sort the reads
 
 for file in *.sam; do 
     samtools view -S -b "$file" | samtools sort -o "${file%.sam}_sorted.bam"
