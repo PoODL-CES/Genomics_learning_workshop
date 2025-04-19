@@ -29,6 +29,6 @@
 
 ### Estimate some statistics from the bam files
 
-# TASK: estimate the sequencing depth and percent mapping of the reads to the reference genome
+# TASK 6: estimate the sequencing depth and percent mapping of the reads to the reference genome
 
 # Look for a section Chromosome-wise coverage” or similar
