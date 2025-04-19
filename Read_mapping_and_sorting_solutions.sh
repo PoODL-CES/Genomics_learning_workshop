@@ -73,6 +73,7 @@ gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam 
 ## Marking and removing duplicates all at once
 ## we are using the parallel command here because of small group size and small files. 
 ## However this is memory intensive and computers can crash if run by big groups on heavy files
+conda create -n parallel -c bioconda parallel
 parallel 'gatk MarkDuplicates -I {} -O {.}_deduplicated.bam -M {.}_duplication_metrics.txt --REMOVE_DUPLICATES true' ::: *_sorted.bam
 
 #or
