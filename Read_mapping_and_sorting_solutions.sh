@@ -31,7 +31,7 @@ done
 ## Deactivate the conda environment
 conda deactivate
 
-#Convert sam to bam 
+#Task 2: Convert sam to bam 
 # Install samtools
 conda create -n samtools -c bioconda samtools
 
