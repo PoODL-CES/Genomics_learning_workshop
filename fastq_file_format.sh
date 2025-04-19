@@ -1,5 +1,5 @@
 ## Structure of fastq files
-## Fastq files are the sequencing output files files obtained after demultimplexing data from illumina seqeuncers. Most sequencing companies provide this file format for illumina data.
+## Fastq files are the sequencing output files files obtained after demultimplexing (a.k.a sorting) data from illumina seqeuncers. Most sequencing companies provide this file format for illumina data.
 ## It consists of four lines
 
 
