@@ -61,7 +61,7 @@ done
 ## Deactivate the conda environment
 conda deactivate 
 
-##### MARKDUPLICATES USING GATK4
+## Task 4: MARKDUPLICATES USING GATK4
 ### Install and activate gatk4
 conda create -n gatk4 -c bioconda gatk4
 conda activate gatk4
@@ -75,7 +75,7 @@ gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam 
 ## However this is memory intensive and computers can crash if run by big groups on heavy files
 parallel 'gatk MarkDuplicates -I {} -O {.}_deduplicated.bam -M {.}_duplication_metrics.txt --REMOVE_DUPLICATES true' ::: *_sorted.bam
 
-### INDEX AFTER MARKDUPLICATES
+##Task 5: INDEX AFTER MARKDUPLICATES
 samtools index BEN_NW_10_deduplicated.bam
 # indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
 
@@ -86,7 +86,7 @@ parallel 'samtools index {}' ::: *_deduplicated.bam
 parallel 'samtools stats {} > {.}_stats.txt' ::: *_deduplicated.bam
 ## This will generate a statistics file which will have information about the number of reads that mapped to the reference geome, number of unmapped reads etc.
 
-#### for estimating sequencing statistics like coverage per chromosome/scaffold
+#Task 6: for estimating sequencing statistics like coverage per chromosome/scaffold
 conda install -c bioconda qualimap
 
 qualimap bamqc -bam BEN_NW12_aligned_reads_sorted_deduplicated.bam -outdir qualimap_results -outformat HTML
