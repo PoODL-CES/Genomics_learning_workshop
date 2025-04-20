@@ -8,7 +8,7 @@
 #fna.sa: suffix array index, used to locate positions of sequences within the reference genome.
 
 ### Structure of fastq files
-# fastq files are the sequencing output files files obtained after demultimplexing data from illumina seqeuncers. Most sequencing companies provide this file format for illumina data in ".gz" extension.It is primarily used for reducing the size of a single file, often on UNIX-like systems.
+# fastq files are the sequencing output files obtained after demultimplexing data from illumina seqeuncers. Most sequencing companies provide this file format for illumina data in ".gz" extension.It is primarily used for reducing the size of a single file, often on UNIX-like systems.
 # It consists of four lines
 
 
