@@ -66,7 +66,7 @@ trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
 
 #you will get "BEN_CI16_sub_1.fq.gz_trimming_report.txt" and "BEN_CI16_sub_2.fq.gz_trimming_report.txt" as the output.
 
-less BEN_CI16_sub_2.fq.gz_trimming_report.txt #to view the .txt file_
+less BEN_CI16_sub_2.fq.gz_trimming_report.txt # less-to view the .txt file_
 
 ## triming for single fasta file
 trim_galore --fastqc BEN_CI16_sub_1.fq.gz
