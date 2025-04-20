@@ -19,7 +19,7 @@ miniconda3/bin/./conda init --all
 ## Install fastqc
 conda create -n fastqc -c bioconda fastqc
 #conda create: creats a new conda environment. Conda environments are isolated environments that allows to manage dependencies and packages for specific projects without affecting the global setup.
-#-n: name of the environment (here it would be fastqc).
+#-n: short for --name. (here it would be fastqc).
 #-c: specifices the channel used to download packages (here we are getting fastqc packages in the bioconda channel).
 #fastqc: name of the package or the tool we are installing in the new environment. Used for quality control of sequencing data.
 
