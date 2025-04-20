@@ -1,6 +1,6 @@
 #### Download the datasets from https://zenodo.org/records/14258052
 #fastq reads are in .gz format
-#genome files are in .fna file (fna is fasta)
+# Original genome files are in .fna file (fna is fasta)
 #fna.amb: stores information about the presence of ambiguous bases (e.g., N, or other non-standard nucleotides) in the reference genome.
 #fna.ann:  stores information about the reference genome, including sequence names, lengths, and other metadata.
 #fna.bwt: contains the Burrows-Wheeler transformed sequence, a compressed representation of the reference genome.
