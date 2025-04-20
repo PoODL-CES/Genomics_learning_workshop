@@ -3,6 +3,7 @@
 
 ### Install bwa
 conda create -n bwa -c bioconda bwa
+BWA (burrows Burrows-Wheeler)- Aligner tool used to align DNA sequencing reads to a reference genome.
 
 ## Activate the conda environment
 conda activate bwa
