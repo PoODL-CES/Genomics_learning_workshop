@@ -168,4 +168,13 @@ ggplot(eigenvec_data, aes(x=PC1, y=PC2)) +
   theme_minimal()
 ggsave("pca_plot.png")
 q()
+#R: Launches R
+#install.packages("ggplot2") library(ggplot2): installs and loads ggplot2 for plotting
+#eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE): reads the .eigenvec file into the dataframe
+#colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:10, sep="")): assigns column names; first 2 columns are FID and IID while next 10 columns are PC1 to PC10
+#head(eigenvec_data): displays the first few rows for the purpose of confirmation
+#ggplot(eigenvec_data, aes(x=PC1, y=PC2)) + geom_point() + labs(x="Principal Component 1", y="Principal Component 2", title="PCA Plot: PC1 vs PC2") + theme_minimal()
+       # Actually builds the graph
+#ggsave("pca_plot.png"): saves the plot in .png format
+#q(): Exits the R console
 #pca_plot.png and Rplots.pdf would be saved in your local home directory
