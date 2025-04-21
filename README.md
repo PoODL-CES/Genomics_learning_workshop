@@ -55,8 +55,8 @@ c) Producing cleaned FASTQ files ready for mapping
 
 
 2. Mapping Reads to Reference Genome 
-Script: Read_mapping_and_sorting.sh 
-Here we: \
+Script: Read_mapping_and_sorting.sh \
+Here we: 
 
 a) Use an aligner like BWA or Bowtie2 to map the cleaned reads to a reference genome \
 b) Convert output from SAM to BAM format (compressed and binary) \
@@ -66,9 +66,9 @@ d) Index the BAM files so tools can access them efficiently
 ~ Why it's important: Proper alignment is the foundation for all downstream analysis. Sorting/indexing ensures quick and efficient variant detection. 
 
 
-3. Identifying Variants (SNPs/Indels) \
+3. Identifying Variants (SNPs/Indels) 
 Script: Variant_identification.sh \
-In this step: \
+In this step: 
 
 a) Call variants (Single Nucleotide Polymorphisms and Indels) using tools like, bcftools, or GATK or freebayes. \
 b) Produce a VCF file (Variant Call Format) with detailed information about each variant \
