@@ -12,7 +12,7 @@ Line 4: AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJ
 ## ASSCII & corrosponding score-https://www.ascii-code.com/
 
 ### Processsing of the Fastq files 
-#	Remove low-quality reads -fastqc
+# Remove low-quality reads -fastqc
 # Trim adapters -trimgalore
 # Assess Base Quality-fastqc
 
@@ -71,5 +71,11 @@ scp -r name@IP_address:path to the file or directory ~/
 
 ## Deactivate the conda environment
 conda deactivate fastqc
+
+### Trimming 
+## Trimming refers to cleaning your raw sequencing reads before mapping. This step removes:adapters, low quality bases, and too short reads
+
+#### Install trim_galore
+conda create -n trim-galore -c bioconda trim-galore
 
 
