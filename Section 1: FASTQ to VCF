@@ -53,6 +53,7 @@ conda create -n fastqc -c bioconda fastqc
 conda activate fastqc
 ## run fastqc
 fastqc *.fq.gz
+# * is a wild card. This command will run all the files name with .fq.gz
 
 ## Output files generated after running fastqc = "BEN_CI16_sub_1_fastqc.zip" and "BEN_CI16_sub_1_fastqc.html".
 # .html file includes visualisations and details about the quality metrics of the sequencing data.
@@ -85,5 +86,30 @@ trim_galore --paired --illumina BEN_CI16_sub_1.fq.gz BEN_CI16_sub_2.fq.gz
 
 #trim_galore: executes Trim Galore tool. it has two tools; Cutadapt (for adapter trimming) and FastQC (for QC checks)
 #--paired: specifies input files are paired-end reads (DNA fragment is sequenced from both ends, producing two reads per fragment).
+
+#you will get "BEN_CI16_sub_1.fq.gz_trimming_report.txt" and "BEN_CI16_sub_2.fq.gz_trimming_report.txt" as the output.
+
+less BEN_CI16_sub_2.fq.gz_trimming_report.txt # less-to view the .txt file
+
+## triming for single fasta file
+trim_galore --fastqc BEN_CI16_sub_1.fq.gz
+
+###  trimming all file named as fq.gz use the following command
+
+# Use * as wildcard to consider any file with the format *_1.fq.gz as an input
+for file in *.fq.gz; do
+  trim_galore --paired "$file" "${file/_1.fq.gz/_2.fq.gz}"
+done
+
+# "$file" refers to the current forward read (read 1).
+# ${file/_1.fq.gz/_2.fq.gz} dynamically generates the corresponding reverse read (read 2) by replacing _1 with _2 in the file name.
+
+# Output files generated after running trim-galore : 
+#BEN_CI16_sub_1.fq.gz_trimming_report.txt (summary report generated during the trimming process)
+#BEN_CI16_sub_1_val_1.fq.gz (val_1: refers to a validated or quality-checked file. In tools like Trim Galore, files are renamed with val_1 post trimming process)
+
+## Deactivate the conda environment
+conda deactivate trim-galore
+
 
 
