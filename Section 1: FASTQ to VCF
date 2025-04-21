@@ -108,6 +108,12 @@ done
 #BEN_CI16_sub_1.fq.gz_trimming_report.txt (summary report generated during the trimming process)
 #BEN_CI16_sub_1_val_1.fq.gz (val_1: refers to a validated or quality-checked file. In tools like Trim Galore, files are renamed with val_1 post trimming process)
 
+# Alternative command
+for file in BEN_CI18_sub_1.fq.gz BEN_NW13_sub_1.fq.gz BEN_SI9_sub_1.fq.gz BEN_NW10_sub_1.fq.gz BEN_SI18_sub_1.fq.gz LGS1_sub_1.fq.gz BEN_NW12_sub_1.fq.gz BEN_SI19_sub_1.fq.gz; do
+    paired_file=${file/_1.fq.gz/_2.fq.gz}
+    trim_galore --paired "$file" "$paired_file"
+done
+
 ## Deactivate the conda environment
 conda deactivate trim-galore
 
