@@ -201,10 +201,22 @@ for file in *_sorted.bam; do
         --REMOVE_DUPLICATES true
 done
 
+#files would be viewed as BEN_NW_10_sorted_reads.bam
 #base=${file%_sorted.bam}: ${file%_sorted.bam} removes _sorted.bam from the filename.
 #-I "$file": takes the input *_sorted.bam file
 #-O "${base}_deduplicated.bam" \: outputs the deduplicated BAM (with duplicates removed).
 #-M "${base}_duplication_metrics.txt": writes duplication statistics to this file.
 #--REMOVE_DUPLICATES true: removes the duplicate reads instead of just marking them.
+
+### Indexing 
+
+samtools index BEN_NW_10_deduplicated.bam
+
+# indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
+
+## Indexing the deduplicated files all at once
+
+samtools index *_deduplicated.bam
+
 
 
