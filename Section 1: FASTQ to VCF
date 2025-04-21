@@ -71,3 +71,5 @@ scp -r name@IP_address:path to the file or directory ~/
 
 ## Deactivate the conda environment
 conda deactivate fastqc
+
+
