@@ -210,7 +210,7 @@ done
 
 ### Indexing 
 
-samtools index BEN_NW_10_deduplicated.bam
+samtools index BEN_NW_10_sorted.bam
 
 # indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
 
@@ -218,5 +218,25 @@ samtools index BEN_NW_10_deduplicated.bam
 
 samtools index *_deduplicated.bam
 
+###Statistical files-## This will generate a statistics file which will have information about the number of reads that mapped to the reference geome, number of unmapped reads etc.
+
+parallel 'samtools stats {} > {.}_stats.txt' ::: *_sorted.bam
+
+## for estimating sequencing statistics like coverage per chromosome/scaffold
+## Tool-qualimap (link)
+
+qualimap bamqc -bam BEN_NW12_aligned_reads_sorted_sorted.bam -outdir qualimap_results -outformat HTML
+
+#For bulk statistics
+
+qualimap bamqc -bam *_aligned_reads_sorted_sorted.bam -outdir qualimap_results -outformat HTML
+
+#-bam : to input bam file
+#-outdir : Directory for results
+#-outformat HTML :  Output in HTML 
+
+cd qualimap_results
+cat genome_results.txt
+# Look for a section Chromosome-wise coverage” or similar
 
 
