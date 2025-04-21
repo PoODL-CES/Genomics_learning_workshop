@@ -35,15 +35,15 @@ Dataset Download Instructions:
 We’ll be using real WGS resequencing data for this workshop. The dataset is a small subset for demonstration purposes. 
 Download Here: https://zenodo.org/records/14258052 
 Instructions to download the data from the website: 
-1. Go to the link above. \
-2. Make separate directory to download your files using command "mkdir name_of_directory" in your linux shell. \
-3. Copy link and download the dataset folder using "wget" command on your linux shell. \
+1. Go to the link above. 
+2. Make separate directory to download your files using command "mkdir name_of_directory" in your linux shell. 
+3. Copy link and download the dataset folder using "wget" command on your linux shell. 
 
-Workshop Pipeline Breakdown: \
+Workshop Pipeline Breakdown: 
 
-Below is the step-by-step pipeline that we’ll be learning and executing during the workshop: \
+Below is the step-by-step pipeline that we’ll be learning and executing during the workshop: 
 
-1. Initial Processing of FASTQ Files \
+1. Initial Processing of FASTQ Files 
 Script: Fastq_file_processing.sh \
 This step involves:
 
@@ -51,10 +51,10 @@ a) Checking the quality of raw reads (using tools like fastqc) \
 b) Trimming adapters or low-quality bases using tools such as Trim-galore or trimmomatic \
 c) Producing cleaned FASTQ files ready for mapping \
 
-~ Why it's important: Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial. \
+~ Why it's important: Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial. 
 
 
-2. Mapping Reads to Reference Genome \
+2. Mapping Reads to Reference Genome 
 Script: Read_mapping_and_sorting.sh \
 Here we: \
 
