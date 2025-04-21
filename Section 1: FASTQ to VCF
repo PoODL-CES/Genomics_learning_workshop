@@ -153,6 +153,8 @@ done
 conda deactivate
 
 ### Convert sam to bam by samtools (Link). Binary Alignment/Map. Converting SAM files to BAM is an essential step for downstream analysis because it is compressed, and indexed that speed up the analysis.
+# Indexing is the process of pre-processing a reference genome to create special helper files that allow fast searching and alignment of reads. 
+
 conda activate samtools
 
 samtools view -S -b BEN_NW_10_aligned_reads.sam | samtools sort -o BEN_NW_10_sorted_reads.bam
