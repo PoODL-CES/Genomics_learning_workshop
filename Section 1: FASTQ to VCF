@@ -236,7 +236,9 @@ qualimap bamqc -bam *_aligned_reads_sorted_sorted.bam -outdir qualimap_results -
 #-outformat HTML :  Output in HTML 
 
 cd qualimap_results
-cat genome_results.txt
+
 # Look for a section Chromosome-wise coverage” or similar
+
+cat genome_results.txt
 
 
