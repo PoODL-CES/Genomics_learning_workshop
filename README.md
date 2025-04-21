@@ -1,15 +1,67 @@
-This is basic workshop for processing Next-generation sequencing reads from illumina platform for population genetics analysis. We are demonstrating analysis pipeline for whole genome resequencing data using subsets of  whole genome resequencing datasets. RADseq data maybe analysed similarly if a reference genomes exists.
+This hands-on workshop is designed to introduce students to the basic analysis pipeline for Next-Generation Sequencing (NGS) reads, specifically from the Illumina platform for population genetics analysis.
+We’ll focus on whole genome resequencing data (WGS), though the same pipeline may also be applied to RAD-seq data if a reference genome is available.
 
-It is a pre-requiste for the workshop to install some form of linux/shell terminal for example those using windows may try mobaxterm (https://mobaxterm.mobatek.net), mac and linux systems should have a terminal already.
+By the end of the workshop, participants will understand how to:
 
-You may want to learn quickly about how illumina sequencing works: https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s
+# Work with raw sequencing data (FASTQ files)
+# Perform quality control and preprocessing
+# Map reads to a reference genome
+# Call and filter genetic variants (SNPs/indels)
+
+## Pre-requisites & Setup
+Before joining the workshop, please make sure you can access a Unix/Linux shell environment, as all commands and tools will be run from the command line.
+It is a pre-requiste for the workshop to install some form of linux/shell terminal for example those using windows may try MobaXterm (https://mobaxterm.mobatek.net), mac and linux systems should have a terminal already.
+
+## To get the most out of this workshop, we recommend checking out the following resources: 
+# How Illumina Sequencing works?
+Check out this breif and engaging video to understand the sequencing technology behind your data : https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s
+
+# Linux Shell basics: 
+Start here if you're new to command-line tools.
+Basic Tutorial: Linux_basics.sh \
+Solutions File: Linux_basics_solutions.sh \
+
+# Advance Linux Commands:
+For those who has completed the above tutorial or are already familiar with basics and want to go deeper to understand further downstream steps.  
+Advanced Tutorial: Linux_advanced.sh \
+Solutions File: Linux_advanced_solutions.sh \
+
+# Dataset Download Instructions:
+We’ll be using real WGS resequencing data for this workshop. The dataset is a small subset for demonstration purposes.
+Download Here: https://zenodo.org/records/14258052
+Instructions to download the data from the website:
+1. Go to the link above.
+2. Make separate directory to download your files using command "mkdir name_of_directory" in your linux shell.
+3. Copy link and download the dataset folder using "wget" command on your linux shell.
+
+# Workshop Pipeline Breakdown
+Below is the step-by-step pipeline that we’ll be learning and executing during the workshop:
+1. Initial Processing of FASTQ Files
+# Script: Fastq_file_processing.sh
+This step involves:
+Checking the quality of raw reads (using tools like fastqc)
+Trimming adapters or low-quality bases using tools such as Trim-galore or trimmomatic
+Producing cleaned FASTQ files ready for mapping
+
+# Why it's important: Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial.
 
 
-Basic linux tutorial : Linux_basics.sh \
-Possible solutions to basic linux tutorial : Linux_basics_solutions.sh \
-Advanced linux tutorial : Linux_advanced.sh \
-Possible solutions to Advanced linux tutorial: Linux_advanced_solutions.sh \
-Initial read processing of illumina seqeuncing reads: Fastq_file_processing.sh \
-Mapping reads to reference genome: Read_mapping_and_sorting.sh \
-Identify variants: Variant_identification.sh \
-Download the datasets from https://zenodo.org/records/14258052
+2. Mapping Reads to Reference Genome
+# Script: Read_mapping_and_sorting.sh
+Here we:
+Use an aligner like BWA or Bowtie2 to map the cleaned reads to a reference genome
+Convert output from SAM to BAM format (compressed and binary)
+Sort the BAM files by genomic coordinates (using samtools sort)
+Index the BAM files so tools can access them efficiently
+
+Why it's important: Proper alignment is the foundation for all downstream analysis. Sorting/indexing ensures quick and efficient variant detection.
+
+
+3. Identifying Variants (SNPs/Indels)
+# Script: Variant_identification.sh
+In this step:
+Call variants (Single Nucleotide Polymorphisms and Indels) using tools like, bcftools, or GATK or freebayes.
+Produce a VCF file (Variant Call Format) with detailed information about each variant
+Optionally apply variant filtering to remove false positives or low-confidence variants
+
+Why it's important: This is the core step of population genetics—identifying the genetic differences across samples.
