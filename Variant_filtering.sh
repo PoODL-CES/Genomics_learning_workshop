@@ -136,8 +136,12 @@ plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_
   --out output_file
 
 #plink: converts VCF file to PLINK binary format (.bed, .bim, .fam)
-#--vcf:
-#.bed, .bim, and .fam would be created
+#--vcf <file>: specifies the input VCF file containing the genotype data
+#--make-bed: converts the input into PLINK binary format.
+#--double-id: Treats the entire VCF sample ID as both Family ID (FID) and Individual ID (IID), which is necessary when IDs include underscores (_) that would otherwise be misinterpreted.
+#--allow-extra-chr: allows non-standard chromosome names which are not usually allowed in strict plink parsing
+#--out output_file: sets the prefix for all the output files.
+#output_file.bed, output_file.bim, and output_file.fam would be created
 
   plink --bfile output_file \
   --pca 10 \
