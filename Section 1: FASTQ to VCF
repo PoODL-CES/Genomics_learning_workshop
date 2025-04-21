@@ -8,7 +8,7 @@ Line 3:+ #seperator
 Line 4: AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFAFJJJJJJJJJJJJJJJJFJJJJJJJJJFJJJJJJJJJFFFJJJJJJJJJJJ #base call quality scores (ASCII characters)
 
 ## ASCII-(American Standard Code for Information Interchange) define Phred Quality Score (Q score) corresponding to each base in the sequence.
-## ASSCII & corrosponding score-https://www.ascii-code.com/
 ## Phred Quality Score (Q score)=−10log10(P), The Phred quality score is a measure used to indicate the accuracy of a base call in DNA sequencing.
+## ASSCII & corrosponding score-https://www.ascii-code.com/
 
-
+## Processsing of the Fastq files 
