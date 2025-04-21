@@ -51,3 +51,23 @@ conda create -n fastqc -c bioconda fastqc
 
 ## Activate the conda environment
 conda activate fastqc
+## run fastqc
+fastqc *.fq.gz
+
+## Output files generated after running fastqc = "BEN_CI16_sub_1_fastqc.zip" and "BEN_CI16_sub_1_fastqc.html".
+# .html file includes visualisations and details about the quality metrics of the sequencing data.
+# .gzip file includes summary of the main quality control metrics, detailed quality control data in text format, graphs and images using in .html report.
+# .gzip would have much more detailed information
+
+#for simplicity; you can transfer all the .zip files in a global zip folder and all the .html files in a global html folder.
+
+mkdir zip_files html_files #"zip_files" and "html_files" directories would be created
+mv *.zip zip_files/ #all the .zip files would be moved to "zip_files"
+mv *.html html_files/ #all the .html files would be moved to "html_files"
+#to visualize the .html files, they can be copied locally to your local computer from the remote cluster
+
+exit #logout from the remote cluster
+scp -r name@IP_address:path to the file or directory ~/
+
+## Deactivate the conda environment
+conda deactivate fastqc
