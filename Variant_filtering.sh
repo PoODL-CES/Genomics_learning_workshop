@@ -147,6 +147,11 @@ plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_
   --pca 10 \
   --allow-extra-chr \
   --out output_file_pca
+
+#--bfile output_file: loads the plink binary dataset previously created using --make-bed
+#--pca 10: calculates the top 10 principal components
+#--allow-extra-chr: allows non-standard chromosome names
+#out output_file_pca: sets the prefix for output files (example: output_file_pca.eigenval)
 #eigenvalues and eigenvectors would be created
 
 conda create -n r_env r_base
