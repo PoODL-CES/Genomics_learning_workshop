@@ -35,7 +35,7 @@ Instructions to download the data from the website:
 2. Make separate directory to download your files using command "mkdir name_of_directory" in your linux shell.
 3. Copy link and download the dataset folder using "wget" command on your linux shell.
 
-Workshop Pipeline Breakdown
+Workshop Pipeline Breakdown: 
 Below is the step-by-step pipeline that we’ll be learning and executing during the workshop:
 1. Initial Processing of FASTQ Files
 Script: Fastq_file_processing.sh
