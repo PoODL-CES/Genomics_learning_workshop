@@ -117,3 +117,46 @@ write.table(mid_95, file = "mid_95_percentile_loci.txt", row.names = FALSE, quot
 
 #output file:  mid_95_percentile_loci.txt
 
+
+##################################################################
+
+
+#perform PCA
+
+#firstly, .bed, .bim and .fam files need to be generated. from a vcf file. 
+#.bed: binary file that stores genotype calls for every individual at very SNP.
+#.bim: tab-delimited text file with information about each SNP.
+#.fam: tab-delimited text file; contains information about each individual/sample.
+
+conda activate plink
+plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_mm0.6_noIndels.recode.vcf \
+  --make-bed \
+  --double-id \
+  --allow-extra-chr \
+  --out output_file
+
+#plink: converts VCF file to PLINK binary format (.bed, .bim, .fam)
+#--vcf:
+#.bed, .bim, and .fam would be created
+
+  plink --bfile output_file \
+  --pca 10 \
+  --allow-extra-chr \
+  --out output_file_pca
+#eigenvalues and eigenvectors would be created
+
+conda create -n r_env r_base
+conda activate r_env
+R
+install.packages("ggplot2")
+library(ggplot2)      
+eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE)
+colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:10, sep=""))
+head(eigenvec_data)
+ggplot(eigenvec_data, aes(x=PC1, y=PC2)) +
+  geom_point() +
+  labs(x="Principal Component 1", y="Principal Component 2", title="PCA Plot: PC1 vs PC2") +
+  theme_minimal()
+ggsave("pca_plot.png")
+q()
+#pca_plot.png and Rplots.pdf would be saved in your local home directory
