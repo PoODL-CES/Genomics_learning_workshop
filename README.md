@@ -3,10 +3,10 @@ We’ll focus on whole genome resequencing data (WGS), though the same pipeline 
 
 By the end of the workshop, participants will understand how to:
 
-# Work with raw sequencing data (FASTQ files)
-# Perform quality control and preprocessing
-# Map reads to a reference genome
-# Call and filter genetic variants (SNPs/indels)
+1. Work with raw sequencing data (FASTQ files)
+2. Perform quality control and preprocessing
+3. Map reads to a reference genome
+4. Call and filter genetic variants (SNPs/indels)
 
 ## Pre-requisites & Setup
 Before joining the workshop, please make sure you can access a Unix/Linux shell environment, as all commands and tools will be run from the command line.
