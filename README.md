@@ -21,14 +21,14 @@ Linux Shell basics:
 Start here if you're new to command-line tools.
 
 Basic Tutorial: Linux_basics.sh \
-Solutions File: Linux_basics_solutions.sh \
+Solutions File: Linux_basics_solutions.sh
 
 Advance Linux Commands:
 
 For those who has completed the above tutorial or are already familiar with basics and want to go deeper to understand further downstream steps.  
 
 Advanced Tutorial: Linux_advanced.sh \
-Solutions File: Linux_advanced_solutions.sh \
+Solutions File: Linux_advanced_solutions.sh
 
 Dataset Download Instructions:
 
@@ -58,10 +58,10 @@ c) Producing cleaned FASTQ files ready for mapping
 Script: Read_mapping_and_sorting.sh
 Here we:
 
-a) Use an aligner like BWA or Bowtie2 to map the cleaned reads to a reference genome
-b) Convert output from SAM to BAM format (compressed and binary)
-c) Sort the BAM files by genomic coordinates (using samtools sort)
-d) Index the BAM files so tools can access them efficiently
+a) Use an aligner like BWA or Bowtie2 to map the cleaned reads to a reference genome \
+b) Convert output from SAM to BAM format (compressed and binary) \
+c) Sort the BAM files by genomic coordinates (using samtools sort) \
+d) Index the BAM files so tools can access them efficiently \
 
 ~ Why it's important: Proper alignment is the foundation for all downstream analysis. Sorting/indexing ensures quick and efficient variant detection.
 
