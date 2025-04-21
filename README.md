@@ -33,7 +33,7 @@ Solutions File: Linux_advanced_solutions.sh
 Dataset Download Instructions: 
 
 We’ll be using real WGS resequencing data for this workshop. The dataset is a small subset for demonstration purposes. 
-Download Here: https://zenodo.org/records/14258052 
+Download Here: https://zenodo.org/records/14258052 \
 Instructions to download the data from the website: 
 1. Go to the link above. 
 2. Make separate directory to download your files using command "mkdir name_of_directory" in your linux shell. 
