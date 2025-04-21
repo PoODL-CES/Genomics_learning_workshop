@@ -12,3 +12,7 @@ Line 4: AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJ
 ## ASSCII & corrosponding score-https://www.ascii-code.com/
 
 ## Processsing of the Fastq files 
+#	Remove low-quality reads -fastqc
+# Trim adapters -trimgalore
+# Assess Base Quality-fastqc
+
