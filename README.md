@@ -63,7 +63,7 @@ b) Convert output from SAM to BAM format (compressed and binary)
 c) Sort the BAM files by genomic coordinates (using samtools sort)
 d) Index the BAM files so tools can access them efficiently
 
-Why it's important: Proper alignment is the foundation for all downstream analysis. Sorting/indexing ensures quick and efficient variant detection.
+~ Why it's important: Proper alignment is the foundation for all downstream analysis. Sorting/indexing ensures quick and efficient variant detection.
 
 
 3. Identifying Variants (SNPs/Indels)
@@ -74,4 +74,4 @@ a) Call variants (Single Nucleotide Polymorphisms and Indels) using tools like, 
 b) Produce a VCF file (Variant Call Format) with detailed information about each variant
 c) Optionally apply variant filtering to remove false positives or low-confidence variants
 
-Why it's important: This is the core step of population genetics—identifying the genetic differences across samples.
+~ Why it's important: This is the core step of population genetics—identifying the genetic differences across samples.
