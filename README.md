@@ -11,6 +11,7 @@ By the end of the workshop, participants will understand how to:
 ~ Pre-requisites & Setup
 Before joining the workshop, please make sure you can access a Unix/Linux shell environment, as all commands and tools will be run from the command line.
 It is a pre-requiste for the workshop to install some form of linux/shell terminal for example those using windows may try MobaXterm (https://mobaxterm.mobatek.net), mac and linux systems should have a terminal already.
+Go through the file "Understand Linux commands" to get a good overview of the command language, we will be using in this workshop.
 
 ~ To get the most out of this workshop, we recommend checking out the following resources: 
 
