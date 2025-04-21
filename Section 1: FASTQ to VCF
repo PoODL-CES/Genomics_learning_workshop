@@ -181,10 +181,30 @@ done
 conda deactivate 
 
 ### Mark Duplicate
-# Its is the process of finding and labeling copies of the same DNA read so they don’t affect the results.
-# Tools-GATK4
+# Its is the process of finding and labeling copies of the same DNA  airse during PCR amplification so they don’t affect the results.
+# Tools-GATK4 ( link )
 
 conda activate gatk4
 
+gatk MarkDuplicates -I BEN_NW_10_sorted_reads.bam -O BEN_NW_10_deduplicated.bam -M BEN_NW_10_duplication_metrics.txt --REMOVE_DUPLICATES true
+
+## Marking and removing duplicates all at once- we will use parallel command because of small group size and small files. 
+## However this is memory intensive and computers can crash if run by big groups on heavy files
+
+
+for file in *_sorted.bam; do
+    base=${file%_sorted.bam}
+    gatk MarkDuplicates \
+        -I "$file" \
+        -O "${base}_deduplicated.bam" \
+        -M "${base}_duplication_metrics.txt" \
+        --REMOVE_DUPLICATES true
+done
+
+#base=${file%_sorted.bam}: ${file%_sorted.bam} removes _sorted.bam from the filename.
+#-I "$file": takes the input *_sorted.bam file
+#-O "${base}_deduplicated.bam" \: outputs the deduplicated BAM (with duplicates removed).
+#-M "${base}_duplication_metrics.txt": writes duplication statistics to this file.
+#--REMOVE_DUPLICATES true: removes the duplicate reads instead of just marking them.
 
 
