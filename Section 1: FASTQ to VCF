@@ -1,1 +1,3 @@
 ## What are FASTQ files and how they different form FASTA file ?
+## Fastq files are the sequencing output files files obtained after demultimplexing (sorting or separating sequencing reads based on their unique barcodes or indices) data from illumina seqeuncers. Most sequencing companies provide this file format for illumina data.
+## It consists of four lines
