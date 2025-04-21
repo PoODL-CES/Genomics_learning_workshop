@@ -1,5 +1,5 @@
 This hands-on workshop is designed to introduce students to the basic analysis pipeline for Next-Generation Sequencing (NGS) reads, specifically from the Illumina platform for population genetics analysis.
-We’ll focus on whole genome resequencing data (WGS), though the same pipeline may also be applied to RAD-seq data if a reference genome is available.
+We’ll focus on whole genome resequencing data (WGS), though the same pipeline may also be applied to RAD-seq or amplicon-seq data (with minor modifications) if a reference genome is available.
 
 By the end of the workshop, participants will understand how to:
 
