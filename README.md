@@ -42,23 +42,26 @@ Instructions to download the data from the website:
 Workshop Pipeline Breakdown: 
 
 Below is the step-by-step pipeline that we’ll be learning and executing during the workshop:
+
 1. Initial Processing of FASTQ Files
 Script: Fastq_file_processing.sh
 This step involves:
-Checking the quality of raw reads (using tools like fastqc)
-Trimming adapters or low-quality bases using tools such as Trim-galore or trimmomatic
-Producing cleaned FASTQ files ready for mapping
 
-Why it's important: Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial.
+a) Checking the quality of raw reads (using tools like fastqc)
+b) Trimming adapters or low-quality bases using tools such as Trim-galore or trimmomatic
+c) Producing cleaned FASTQ files ready for mapping
+
+~ Why it's important: Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial.
 
 
 2. Mapping Reads to Reference Genome
 Script: Read_mapping_and_sorting.sh
 Here we:
-Use an aligner like BWA or Bowtie2 to map the cleaned reads to a reference genome
-Convert output from SAM to BAM format (compressed and binary)
-Sort the BAM files by genomic coordinates (using samtools sort)
-Index the BAM files so tools can access them efficiently
+
+a) Use an aligner like BWA or Bowtie2 to map the cleaned reads to a reference genome
+b) Convert output from SAM to BAM format (compressed and binary)
+c) Sort the BAM files by genomic coordinates (using samtools sort)
+d) Index the BAM files so tools can access them efficiently
 
 Why it's important: Proper alignment is the foundation for all downstream analysis. Sorting/indexing ensures quick and efficient variant detection.
 
@@ -66,8 +69,9 @@ Why it's important: Proper alignment is the foundation for all downstream analys
 3. Identifying Variants (SNPs/Indels)
 Script: Variant_identification.sh
 In this step:
-Call variants (Single Nucleotide Polymorphisms and Indels) using tools like, bcftools, or GATK or freebayes.
-Produce a VCF file (Variant Call Format) with detailed information about each variant
-Optionally apply variant filtering to remove false positives or low-confidence variants
+
+a) Call variants (Single Nucleotide Polymorphisms and Indels) using tools like, bcftools, or GATK or freebayes.
+b) Produce a VCF file (Variant Call Format) with detailed information about each variant
+c) Optionally apply variant filtering to remove false positives or low-confidence variants
 
 Why it's important: This is the core step of population genetics—identifying the genetic differences across samples.
