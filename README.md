@@ -18,6 +18,7 @@ Check out this breif and engaging video to understand the sequencing technology 
 
 # Linux Shell basics: 
 Start here if you're new to command-line tools.
+
 Basic Tutorial: Linux_basics.sh \
 Solutions File: Linux_basics_solutions.sh \
 
