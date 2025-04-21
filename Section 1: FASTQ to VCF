@@ -16,6 +16,8 @@ Line 4: AAFFFJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFJJJJJJJJJJJJFJJJJJJJJJJFJJJJJJJJJJ
 # Trim adapters -trimgalore
 # Assess Base Quality-fastqc
 
+###################################################################################################################################################################
+
 ### For fastq files use zonedo link-https://zenodo.org/records/14258052
 
 wget link of the file 
@@ -73,6 +75,8 @@ scp -r name@IP_address:path to the file or directory ~/
 ## Deactivate the conda environment
 conda deactivate fastqc
 
+#######################################################################################################################################################################
+
 ### Trimming 
 ## Trimming refers to cleaning your raw sequencing reads before mapping. This step removes:adapters, low quality bases, and too short reads
 
@@ -116,6 +120,8 @@ done
 
 ## Deactivate the conda environment
 conda deactivate trim-galore
+
+###############################################################################################################################################################
 
 ### Mapping and sorting
 # Mapping-the process of aligning sequencing reads to a reference genome to determine their original genomic location.
@@ -180,6 +186,8 @@ done
 
 conda deactivate 
 
+#################################################################################################################################################################
+
 ### Mark Duplicate
 # Its is the process of finding and labeling copies of the same DNA  airse during PCR amplification so they don’t affect the results.
 # Tools-GATK4 ( link )
@@ -207,6 +215,8 @@ done
 #-O "${base}_deduplicated.bam" \: outputs the deduplicated BAM (with duplicates removed).
 #-M "${base}_duplication_metrics.txt": writes duplication statistics to this file.
 #--REMOVE_DUPLICATES true: removes the duplicate reads instead of just marking them.
+
+######################################################################################################################################################################
 
 ### Indexing 
 
@@ -260,5 +270,5 @@ bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
 #-o: passed_variants.vcf.gz	Specifies the output file name where filtered variants will be saved.
 #"input_file_name".vcf.gz: The name of the input compressed VCF file containing variant calls.
 
-##################################################################################################################################################3
+##################################################################################################################################################
 
