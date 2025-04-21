@@ -17,24 +17,24 @@ It is a pre-requiste for the workshop to install some form of linux/shell termin
 How Illumina Sequencing works?
 Check out this breif and engaging video to understand the sequencing technology behind your data : https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s
 
-Linux Shell basics: \
-Start here if you're new to command-line tools. \
+Linux Shell basics: 
+Start here if you're new to command-line tools. 
 
 Basic Tutorial: Linux_basics.sh \
 Solutions File: Linux_basics_solutions.sh
 
-Advance Linux Commands: \
+Advance Linux Commands: 
 
-For those who has completed the above tutorial or are already familiar with basics and want to go deeper to understand further downstream steps.  \
+For those who has completed the above tutorial or are already familiar with basics and want to go deeper to understand further downstream steps.  
 
 Advanced Tutorial: Linux_advanced.sh \
 Solutions File: Linux_advanced_solutions.sh
 
-Dataset Download Instructions: \
+Dataset Download Instructions: 
 
-We’ll be using real WGS resequencing data for this workshop. The dataset is a small subset for demonstration purposes. \
-Download Here: https://zenodo.org/records/14258052 \
-Instructions to download the data from the website: \
+We’ll be using real WGS resequencing data for this workshop. The dataset is a small subset for demonstration purposes. 
+Download Here: https://zenodo.org/records/14258052 
+Instructions to download the data from the website: 
 1. Go to the link above. \
 2. Make separate directory to download your files using command "mkdir name_of_directory" in your linux shell. \
 3. Copy link and download the dataset folder using "wget" command on your linux shell. \
