@@ -13,6 +13,7 @@ Before joining the workshop, please make sure you can access a Unix/Linux shell 
 It is a pre-requiste for the workshop to install some form of linux/shell terminal for example those using windows may try MobaXterm (https://mobaxterm.mobatek.net), mac and linux systems should have a terminal already.
 
 ~ To get the most out of this workshop, we recommend checking out the following resources: 
+
  How Illumina Sequencing works?
 Check out this breif and engaging video to understand the sequencing technology behind your data : https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s
 
@@ -23,11 +24,14 @@ Basic Tutorial: Linux_basics.sh \
 Solutions File: Linux_basics_solutions.sh \
 
 Advance Linux Commands:
+
 For those who has completed the above tutorial or are already familiar with basics and want to go deeper to understand further downstream steps.  
+
 Advanced Tutorial: Linux_advanced.sh \
 Solutions File: Linux_advanced_solutions.sh \
 
 Dataset Download Instructions:
+
 We’ll be using real WGS resequencing data for this workshop. The dataset is a small subset for demonstration purposes.
 Download Here: https://zenodo.org/records/14258052
 Instructions to download the data from the website:
@@ -36,6 +40,7 @@ Instructions to download the data from the website:
 3. Copy link and download the dataset folder using "wget" command on your linux shell.
 
 Workshop Pipeline Breakdown: 
+
 Below is the step-by-step pipeline that we’ll be learning and executing during the workshop:
 1. Initial Processing of FASTQ Files
 Script: Fastq_file_processing.sh
