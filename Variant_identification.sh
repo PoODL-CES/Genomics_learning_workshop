@@ -29,18 +29,14 @@ strelka_germline/runWorkflow.py -m local -j 8
 #-m local: Specifies that the workflow will be executed on the local machine.
 #-j 8: Defines the number of parallel threads (CPUs) to use. 
 
-# For loop command for multiple files: takes in bam files iteratively and performs configuration and execution steps inside the loop
+# For joint variant calling using all samples
 
-for bam in *_aligned_reads_sorted_deduplicated.bam; do  # loops through the required bam files
-    sample_name=$(basename "$bam" _aligned_reads_sorted_deduplicated.bam) # extracts the sample name from the .bam filename
-    output_dir="strelka_germline_${sample_name}" 
-    
-    mkdir -p "$output_dir"  # make a directory with the sample name extracted in the above steps
-
-    /home/nithinka/miniconda3/envs/strelka/bin/configureStrelkaGermlineWorkflow.py \
-        --bam "$bam" \
+    configureStrelkaGermlineWorkflow.py \
+        --bam indv1.bam \
+        --bam indv2.bam \
+        --bam indv3.bam \
         --referenceFasta GCA_021130815.1_PanTigT.MC.v3_genomic.fna \
-        --runDir "$output_dir"                                                      # run configuration step
+        --runDir output_folder                                                     # run configuration step
 
     "$output_dir/runWorkflow.py" -m local -j 8                                      # workflow execution step
 
