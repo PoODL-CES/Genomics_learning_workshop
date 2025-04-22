@@ -13,7 +13,7 @@ By the end of the workshop, participants will understand how to:
 ###  Pre-requisites & Setup  
 Before joining the workshop, please make sure you can access a Unix/Linux shell environment, as all commands and tools will be run from the command line.  
 It is a pre-requisite for the workshop to install some form of Linux/shell terminal. For example, those using Windows may try [MobaXterm](https://mobaxterm.mobatek.net), and Mac/Linux systems should already have a terminal available.  
-Go through the file `Understand_Linux_commands` to get a good overview of the command language we will be using in this workshop.
+Go through the file [`Understand_Linux_commands`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Understand_Linux%20_commands) to get a good overview of the command language we will be using in this workshop.
 
 
 ---
