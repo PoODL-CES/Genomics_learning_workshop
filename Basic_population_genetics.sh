@@ -46,7 +46,7 @@ plink --file machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly
 #out output_file_pca: sets the prefix for output files (example: output_file_pca.eigenval)
 #eigenvalues and eigenvectors would be created
 
-conda create -n r_env r_base
+conda create -n r_env -c conda-forge r-base r-ggplot2
 conda activate r_env
 R
 install.packages("ggplot2")
