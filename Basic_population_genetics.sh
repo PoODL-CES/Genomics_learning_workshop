@@ -18,7 +18,7 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 
 conda deactivate vcftools
 
-# Then we will create the bed file by inputting the ped file
+# Then we will create the bed file by inputting the ped file to plink
 
 conda activate plink
 plink --file machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB \
