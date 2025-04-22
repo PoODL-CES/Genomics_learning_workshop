@@ -16,7 +16,7 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
   --plink \
   --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB
 
-conda deactivate vcftools
+conda deactivate
 
 # Then we will create the bed file by inputting the ped file to plink
 
@@ -34,6 +34,10 @@ plink --file machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly
 #--allow-extra-chr: allows non-standard chromosome names which are not usually allowed in strict plink parsing
 #--out output_file: sets the prefix for all the output files.
 #output_file.bed, output_file.bim, and output_file.fam would be created
+conda deactivate
+
+################# For PCA
+conda activate plink
 
   plink --bfile machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB \
   --pca 5 \
@@ -45,12 +49,16 @@ plink --file machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly
 #--allow-extra-chr: allows non-standard chromosome names
 #out output_file_pca: sets the prefix for output files (example: output_file_pca.eigenval)
 #eigenvalues and eigenvectors would be created
+conda deactivate
 
+
+# To plot the PCA we will use R (https://www.r-project.org)
+# To install R
 conda create -n r_env -c conda-forge r-base r-ggplot2
+# Activate the R environment
 conda activate r_env
+# Activate R
 R
-install.packages("ggplot2")
-library(ggplot2)      
 eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE)
 colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:10, sep=""))
 head(eigenvec_data)
@@ -60,8 +68,8 @@ ggplot(eigenvec_data, aes(x=PC1, y=PC2)) +
   theme_minimal()
 ggsave("pca_plot.png")
 q()
+conda deactivate
 
-scp username@IP_address:~/"path to the file on the remote cluster"/Rplots.pdf .
 #R: Launches R
 #install.packages("ggplot2") library(ggplot2): installs and loads ggplot2 for plotting
 #eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE): reads the .eigenvec file into the dataframe
@@ -75,3 +83,8 @@ scp username@IP_address:~/"path to the file on the remote cluster"/Rplots.pdf .
 #scp: secure copy protocol; copies files betweeen a local and a remote computer.
 # .: destination on the local machine. copies to the current directory.
 #pca_plot.png and Rplots.pdf would be saved in your local home directory
+
+
+# For running the tutorial on CES server: We exit the server and download the file to our computers to view it. For this we exit the server using the 'exit' command and then run 'scp username@IP_address:~/"path to the file on the remote cluster"/Rplots.pdf .'
+
+################# For ADMIXTURE
