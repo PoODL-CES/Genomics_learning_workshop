@@ -98,7 +98,8 @@ c) Optionally apply variant filtering to remove false positives or low-confidenc
 ---
 
  **4. Filtering Variants**  
-Script: `Variant_filtering.sh`  
+Script: [`Variant_filtering.sh`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Variant_filtering.sh)
+  
 This step involves:  
 a) Applying quality-based filters on the raw VCF file using tools like `bcftools` or `vcftools`  
 b) Removing variants with low depth, poor quality scores, or those that don't meet desired thresholds  
