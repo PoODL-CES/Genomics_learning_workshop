@@ -38,9 +38,8 @@ strelka_germline/runWorkflow.py -m local -j 8
         --referenceFasta GCA_021130815.1_PanTigT.MC.v3_genomic.fna \
         --runDir output_folder                                                     # run configuration step
 
-    "$output_dir/runWorkflow.py" -m local -j 8                                      # workflow execution step
+    output_folder/runWorkflow.py -m local -j 8                                      # workflow execution step
 
-done
 
 # an output directory will be present for all input bam files containing results of variant calling.
 
