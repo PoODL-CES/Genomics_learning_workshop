@@ -110,7 +110,8 @@ c) Producing a filtered, high-confidence VCF file for downstream analysis
 ---
 
 **5. Population Structure & Visualization**  
-Script: `Basic_population_genetics.sh`  
+Script: [`Basic_population_genetics.sh`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Basic_population_genetics.sh)
+
 This step includes:  
 a) Converting filtered VCF files into formats suitable for statistical analyses (e.g.,`.bed`, `.ped`) using tools like `plink`  
 b) Performing Principal Component Analysis (PCA) to visualize population structure and sample clustering  
