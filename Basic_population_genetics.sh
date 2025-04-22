@@ -8,6 +8,8 @@
 #.bim: tab-delimited text file with information about each SNP.
 #.fam: tab-delimited text file; contains information about each individual/sample.
 
+# We will do the convertion in two steps. First we will create a ped file using vcftools --plink option
+
 conda activate vcftools
 
 vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.recode.vcf \
@@ -15,6 +17,8 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
   --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB
 
 conda deactivate vcftools
+
+# Then we will create the bed file by inputting the ped file
 
 conda activate plink
 plink --file machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB \
