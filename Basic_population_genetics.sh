@@ -1,3 +1,6 @@
+#### Download the datasets from https://zenodo.org/records/15259681
+### the filtered vcf generated after variant filtering maybe used for this exercise
+
 #PCA
 
 #firstly, .bed, .bim and .fam files need to be generated. from a vcf file. 
