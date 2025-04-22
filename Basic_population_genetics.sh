@@ -64,7 +64,8 @@ paste geographical_location.txt machali_Aligned_rangeWideMerge_strelka_update2_B
 
 # Activate R
 R
-eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE)
+eigenvec_data <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.pca
+", header=FALSE)
 colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:10, sep=""))
 head(eigenvec_data)
 ggplot(eigenvec_data, aes(x=PC1, y=PC2)) +
