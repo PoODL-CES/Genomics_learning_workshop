@@ -91,3 +91,26 @@ b) Produce a `VCF` file (Variant Call Format) with detailed information about ea
 c) Optionally apply variant filtering to remove false positives or low-confidence variants  
 
  *Why it's important:* This is the core step of population genetics—identifying the genetic differences across samples.
+
+---
+
+ **4. Filtering Variants**  
+Script: `Variant_filtering.sh`  
+This step involves:  
+a) Applying quality-based filters on the raw VCF file using tools like `bcftools` or `vcftools`  
+b) Removing variants with low depth, poor quality scores, or those that don't meet desired thresholds  
+c) Producing a filtered, high-confidence VCF file for downstream analysis  
+
+*Why it's important:* Filtering improves the reliability of variant calls and ensures that only biologically relevant, high-confidence variants are retained for further analysis.
+
+---
+
+**5. Population Structure & Visualization**  
+Script: `VCF_to_PCA.sh`  
+This step includes:  
+a) Converting filtered VCF files into formats suitable for statistical analyses (e.g.,`.bed`, `.ped`) using tools like `plink`  
+b) Performing Principal Component Analysis (PCA) to visualize population structure and sample clustering  
+c) Interpreting population-level genetic structure from the PCA plots  
+
+*Why it's important:* PCA helps in understanding the underlying genetic variation across samples and can highlight population-level patterns or sample outliers.
+
