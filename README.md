@@ -86,7 +86,8 @@ d) Index the `BAM` files so tools can access them efficiently
 ---
 
 **3. Identifying Variants (SNPs/Indels)**  
-Script: `Variant_identification.sh`  
+Script: [`Variant_identification.sh`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Variant_identification.sh)
+  
 In this step:  
 a) Call variants (Single Nucleotide Polymorphisms and Indels) using tools like `bcftools` or `strelka`  
 b) Produce a `VCF` file (Variant Call Format) with detailed information about each variant  
