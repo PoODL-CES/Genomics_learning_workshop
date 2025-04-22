@@ -61,7 +61,8 @@ Below is the step-by-step pipeline that we’ll be learning and executing during
 ---
 
 **1. Initial Processing of FASTQ Files**  
-Script: `Fastq_file_processing.sh`  
+Script: [`Fastq_file_processing_solutions.sh`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Fastq_file_processing_solutions.sh)
+  
 This step involves:  
 a) Checking the quality of raw reads (using tools like `fastqc`)  
 b) Trimming adapters or low-quality bases using tools such as `Trim-galore` or `trimmomatic`  
