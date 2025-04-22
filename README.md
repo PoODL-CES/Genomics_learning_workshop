@@ -45,7 +45,7 @@ For those who have completed the above tutorial or are already familiar with the
 ### Dataset Download Instructions:
 
 We’ll be using real WGS resequencing data for this workshop. The dataset is a small subset for demonstration purposes.  
-**Download Here**: [Download Here](https://zenodo.org/records/14258052)
+: [Download Here](https://zenodo.org/records/14258052)
  
 
 Instructions to download the data from the website:  
