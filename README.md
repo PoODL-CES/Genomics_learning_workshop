@@ -20,8 +20,7 @@ Go through the file `Understand_Linux_commands` to get a good overview of the co
 
 ###  To get the most out of this workshop, we recommend checking out the following resources:
 
-**How Illumina Sequencing works?**  
-Check out this brief and engaging video to understand the sequencing technology behind your data:  
+**How Illumina Sequencing works?**   
 [Check out this brief and engaging video to understand the sequencing technology behind your data](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
 
 
