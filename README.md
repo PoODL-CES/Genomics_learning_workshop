@@ -22,7 +22,8 @@ Go through the file `Understand_Linux_commands` to get a good overview of the co
 
 **How Illumina Sequencing works?**  
 Check out this brief and engaging video to understand the sequencing technology behind your data:  
-[https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s](https://www.youtube.com/watch?v=fCd6B5HRaZ8&t=238s)
+[Check out this brief and engaging video to understand the sequencing technology behind your data](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
+
 
 ---
 
