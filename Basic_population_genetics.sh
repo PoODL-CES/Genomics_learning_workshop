@@ -35,10 +35,10 @@ plink --file machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly
 #--out output_file: sets the prefix for all the output files.
 #output_file.bed, output_file.bim, and output_file.fam would be created
 
-  plink --bfile output_file \
-  --pca 10 \
+  plink --bfile machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB \
+  --pca 5 \
   --allow-extra-chr \
-  --out output_file_pca
+  --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB
 
 #--bfile output_file: loads the plink binary dataset previously created using --make-bed
 #--pca 10: calculates the top 10 principal components
