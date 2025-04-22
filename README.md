@@ -73,7 +73,8 @@ c) Producing cleaned `FASTQ` files ready for mapping
 ---
 
 **2. Mapping Reads to Reference Genome**  
-Script: `Read_mapping_and_sorting.sh`  
+Script: [`Read_mapping_and_sorting_solutions.sh`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Read_mapping_and_sorting_solutions.sh)
+  
 Here we:  
 a) Use an aligner like `BWA` or `Bowtie2` to map the cleaned reads to a reference genome  
 b) Convert output from `SAM` to `BAM` format (compressed and binary)  
