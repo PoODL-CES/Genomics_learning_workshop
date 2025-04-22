@@ -96,4 +96,11 @@ do
 admixture machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe0.05_mm0.6_meanDPmid95percentile_imiss0.6_noZoo.bed ${K}
 done
 
+# We edit the .fam file with the location names for the samples and then paste the location and sample names to the .Q files created by ADMIXTURE
+# The .Q file has the ancestry proportion for each individual from each ancestral population
+# We paste the first two columns of the .fam file to the .Q file
+
+awk '{print $1"\t"$2}' > geographical_location.txt
+paste geographical_location.txt machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe0.05_mm0.6_meanDPmid95percentile_imiss0.6_noZoo.2.Q > machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe0.05_mm0.6_meanDPmid95percentile_imiss0.6_noZoo.2.K
+
 
