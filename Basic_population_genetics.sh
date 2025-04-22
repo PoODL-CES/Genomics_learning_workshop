@@ -88,3 +88,12 @@ conda deactivate
 # For running the tutorial on CES server: We exit the server and download the file to our computers to view it. For this we exit the server using the 'exit' command and then run 'scp username@IP_address:~/"path to the file on the remote cluster"/Rplots.pdf .'
 
 ################# For ADMIXTURE
+
+conda create -n admixture -c bioconda admixture
+
+for K in {2..4}
+do 
+admixture machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe0.05_mm0.6_meanDPmid95percentile_imiss0.6_noZoo.bed ${K}
+done
+
+
