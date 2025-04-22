@@ -114,3 +114,12 @@ done
 ## to plot the admixture results
 
 ################# For heterozygosity
+
+## We will use RTG-tools for estimating heterozygosity per sample (https://www.realtimegenomics.com/products/rtg-tools)
+## To install RTG tools
+
+conda create -n rtg-tools -c bioconda rtg-tools
+
+conda activate rtg-tools
+
+
