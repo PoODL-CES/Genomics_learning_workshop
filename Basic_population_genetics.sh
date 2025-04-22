@@ -57,6 +57,10 @@ conda deactivate
 conda create -n r_env -c conda-forge r-base r-ggplot2
 # Activate the R environment
 conda activate r_env
+
+# We edit the .fam file with the location names for the samples
+awk '{print $1"\t"$2}' machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe0.05_mm0.6_meanDPmid95percentile_imiss0.6_noZoo.fam > geographical_location.txt
+
 # Activate R
 R
 eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE)
@@ -100,7 +104,7 @@ done
 # The .Q file has the ancestry proportion for each individual from each ancestral population
 # We paste the first two columns of the .fam file to the .Q file
 
-awk '{print $1"\t"$2}' > geographical_location.txt
+
 paste geographical_location.txt machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe0.05_mm0.6_meanDPmid95percentile_imiss0.6_noZoo.2.Q > machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe0.05_mm0.6_meanDPmid95percentile_imiss0.6_noZoo.2.K
 
 
