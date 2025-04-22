@@ -129,7 +129,7 @@ write.table(mid_95, file = "mid_95_percentile_loci.txt", row.names = FALSE, quot
 #.fam: tab-delimited text file; contains information about each individual/sample.
 
 conda activate plink
-plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_mm0.6_noIndels.recode.vcf \
+plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile.recode.vcf \
   --make-bed \
   --double-id \
   --allow-extra-chr \
@@ -168,6 +168,8 @@ ggplot(eigenvec_data, aes(x=PC1, y=PC2)) +
   theme_minimal()
 ggsave("pca_plot.png")
 q()
+
+scp username@IP_address:~/"path to the file on the remote cluster"/Rplots.pdf .
 #R: Launches R
 #install.packages("ggplot2") library(ggplot2): installs and loads ggplot2 for plotting
 #eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE): reads the .eigenvec file into the dataframe
@@ -177,4 +179,7 @@ q()
        # Actually builds the graph
 #ggsave("pca_plot.png"): saves the plot in .png format
 #q(): Exits the R console
+
+#scp: secure copy protocol; copies files betweeen a local and a remote computer.
+# .: destination on the local machine. copies to the current directory.
 #pca_plot.png and Rplots.pdf would be saved in your local home directory
