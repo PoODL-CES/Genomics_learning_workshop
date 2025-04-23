@@ -58,23 +58,23 @@ conda create -n r_env -c conda-forge r-base r-ggplot2
 # Activate the R environment
 conda activate r_env
 
-# We edit the .fam file with the location names for the samples
-awk '{print $1"\t"$2}' machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.fam > geographical_location.txt
-paste geographical_location.txt machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.eigenvec > machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.pca
-
 # Activate R
+# 
 R
-eigenvec_data <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.pca
-", header=FALSE)
-colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:10, sep=""))
-head(eigenvec_data)
-ggplot(eigenvec_data, aes(x=PC1, y=PC2)) +
-  geom_point() +
-  labs(x="Principal Component 1", y="Principal Component 2", title="PCA Plot: PC1 vs PC2") +
-  theme_minimal()
-ggsave("pca_plot.png")
-q()
+fam <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.fam", header = FALSE)
 conda deactivate
+eigenvec <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.eigenvec", header = FALSE)
+colnames(eigenvec) <- c("FID", "IID", paste0("PC", 1:5))
+colnames(fam)[2] <- "Region"
+eigenvec$Region <- fam$V2
+library(ggplot2)
+ggplot(eigenvec, aes(x = PC1, y = PC2, color = IID)) +
+geom_point(size = 3, alpha = 0.8) +
+theme_minimal() +
+labs(title = "PCA Plot by Region", x = "PC1", y = "PC2") +
+scale_color_brewer(palette = "Set2")
+ggsave("pca_by_region.png")
+ggsave("pca_by_region.pdf")
 
 #R: Launches R
 #install.packages("ggplot2") library(ggplot2): installs and loads ggplot2 for plotting
