@@ -45,7 +45,7 @@ conda activate plink
   --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB
 
 #--bfile output_file: loads the plink binary dataset previously created using --make-bed
-#--pca 10: calculates the top 10 principal components
+#--pca 5: calculates the top 5 principal components
 #--allow-extra-chr: allows non-standard chromosome names
 #out output_file_pca: sets the prefix for output files (example: output_file_pca.eigenval)
 #eigenvalues and eigenvectors would be created
