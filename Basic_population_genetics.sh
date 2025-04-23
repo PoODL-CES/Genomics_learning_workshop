@@ -62,7 +62,6 @@ conda activate r_env
 # 
 R
 fam <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.fam", header = FALSE)
-conda deactivate
 eigenvec <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.eigenvec", header = FALSE)
 colnames(eigenvec) <- c("FID", "IID", paste0("PC", 1:5))
 colnames(fam)[2] <- "Region"
@@ -77,7 +76,6 @@ ggsave("pca_by_region.png")
 ggsave("pca_by_region.pdf")
 
 #R: Launches R
-#install.packages("ggplot2") library(ggplot2): installs and loads ggplot2 for plotting
 #eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE): reads the .eigenvec file into the dataframe
 #colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:10, sep="")): assigns column names; first 2 columns are FID and IID while next 10 columns are PC1 to PC10
 #head(eigenvec_data): displays the first few rows for the purpose of confirmation
