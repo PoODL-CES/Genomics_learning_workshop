@@ -78,13 +78,21 @@ ggsave("pca_by_region.pdf")
 #R: Launches R
 #fam <- read.table("output_file.fam", header=FALSE): reads the edited .fam file into the dataframe  
 #eigenvec_data <- read.table("output_file_pca.eigenvec", header=FALSE): reads the .eigenvec file into the dataframe
-#colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:5)): assigns column names; first 2 columns are FID and IID while next 10 columns are PC1 to PC10
+#colnames(eigenvec_data) <- c("FID", "IID", paste("PC", 1:5)): assigns column names; first 2 columns are FID and IID while next 5 columns are PC1 to PC5
+#colnames(fam)[2] <- "Region": Renames the second column of the .fam file to "Region"
+#eigenvec$Region <- fam$V2: Adds a new "Region" column to the eigenvec data frame using the values from the .fam file’s 2nd column
 #head(eigenvec_data): displays the first few rows for the purpose of confirmation
-#ggplot(eigenvec_data, aes(x=PC1, y=PC2)) + geom_point() + labs(x="Principal Component 1", y="Principal Component 2", title="PCA Plot: PC1 vs PC2") + theme_minimal()
-       # Actually builds the graph
-#ggsave("pca_plot.png"): saves the plot in .png format
+#library(ggplot2): loads ggplot2 
+#ggplot(eigenvec, aes(x = PC1, y = PC2, color = IID)) +: tells ggplot to use PC1 on the x-axis and PC2 on the y-axis, and color points by IID.
+#geom_point(size = 3, alpha = 0.8) +:Adds points to the plot, size 3, and 80% opaque.
+#theme_minimal() +: A clean and simple background theme.
+#labs(title = "PCA Plot by Region", x = "PC1", y = "PC2") +:Labels the title and axes.
+#scle_color_brewer(palette = "Set2"): Applies a color palette ("Set2") from ColorBrewer
+#ggsave("pca_by_region.png"): saves the plot in .png format
+#ggsave("pca_by_region.pdf"): saves the plot in .pdf format
 #q(): Exits the R console
 
+scp 
 #scp: secure copy protocol; copies files betweeen a local and a remote computer.
 # .: destination on the local machine. copies to the current directory.
 #pca_plot.png and Rplots.pdf would be saved in your local home directory
