@@ -103,6 +103,7 @@ scp
 ################# For ADMIXTURE
 
 conda create -n admixture -c bioconda admixture
+conda activate admixture
 
 for K in {2..4}
 do 
