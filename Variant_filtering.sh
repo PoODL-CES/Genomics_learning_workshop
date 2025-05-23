@@ -4,9 +4,9 @@
 #1) filtering passed from non passed
 #using bcftools
 
-conda install -c bioconda bcftools
+conda create -n bcftools -c bioconda bcftools
 bcftools --version (#this is confirmatory step)
-conda activate bioinfo
+conda activate bcftools
 bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
 
 #bcftools: Calls the bcftools program, a widely used tool for processing VCF/BCF files.
@@ -128,6 +128,7 @@ write.table(mid_95, file = "mid_95_percentile_loci.txt", row.names = FALSE, quot
 #.bim: tab-delimited text file with information about each SNP.
 #.fam: tab-delimited text file; contains information about each individual/sample.
 
+conda create -n plink -c bioconda plink
 conda activate plink
 plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile.recode.vcf \
   --make-bed \
