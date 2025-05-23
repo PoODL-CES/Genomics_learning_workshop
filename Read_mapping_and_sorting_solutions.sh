@@ -118,7 +118,8 @@ parallel 'samtools stats {} > {.}_stats.txt' ::: *_deduplicated.bam
 ## This will generate a statistics file which will have information about the number of reads that mapped to the reference geome, number of unmapped reads etc.
 
 #Task 6: for estimating sequencing statistics like coverage per chromosome/scaffold
-conda install -c bioconda qualimap
+conda create -n qualimap -c bioconda qualimap
+conda activate qualimap
 
 qualimap bamqc -bam BEN_NW12_aligned_reads_sorted_deduplicated.bam -outdir qualimap_results -outformat HTML
 
