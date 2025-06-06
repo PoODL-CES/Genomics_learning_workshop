@@ -77,9 +77,9 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 
 for miss in {10..90..10}; do
   perc=$(echo "scale=2; $miss / 100" | bc)
-  vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05.recode.vcf \
+  vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6.recode.vcf \
            --max-missing $perc \
-           --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_miss${miss} \
+           --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_${miss} \
            --recode
 done
 # a different output file will be generated for each value of the missingness filter.
@@ -108,9 +108,11 @@ R -e "library(ggplot2); library(scales); data <- read.table('variant_counts.txt'
 
 # this will generate a variant_plot.png which can be visualized.
 
-#apply max missing 0.6 filter. the one with atleast 60% of data have been retained
+#### Apply max missing 0.6 filter. the one with atleast 60% of data have been retained *
 
-vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05.recode.vcf --max-missing 0.6 --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_mm0.6 --recode
+# *If you have performed the above step to apply a for loop for max missing 0.1 to 0.9, skip the below step and use the output file for the 0.6 max missingness filter for subsequent steps.
+
+vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6.recode.vcf --max-missing 0.6 --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6 --recode
 
 #find the percentile depth between 0.05 and 0.975, the middle 95 percentile.
 #below 0.05 because low conf
