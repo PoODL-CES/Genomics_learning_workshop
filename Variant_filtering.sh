@@ -57,6 +57,18 @@ vcftools --gzvcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_pass
 vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05.recode.vcf --remove-indels \ 
 --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05 --recode
 
+### Apply the individual missingness filter
+
+vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05.recode.vcf --missing-indv
+
+# the above command gives you an output file out.imiss. If you open this file you can see the fraction of missing sites for each inidividual in the column fmiss.
+# we want to remove the individuals which have a high proportion of missing sites
+
+## Remove individuals which have missing proportion greater than 60 percent.
+
+ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05.recode.vcf \
+ --remove <(awk '$5 > 0.6 {print $1}' out.imiss) --recode --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6
+
 
 
 ## Apply a missingness filter to only keep variants which are common among a proportion of individuals.
