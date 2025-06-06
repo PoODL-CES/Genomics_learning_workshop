@@ -46,12 +46,18 @@ conda activate vcftools
 # when applying new filters, change the name of the output file to reflect the new filters that have been applied.
 
 ## Applying base quality, genotype quality and hwe filters:
-vcftools --gzvcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3.recode.vcf.gz /
+vcftools --gzvcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3.recode.vcf.gz \
 --minQ 30 --minGQ 30 --hwe 0.05  --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05 --recode
 
 # --minQ  : Minimum base quality - Filters out variant sites where the supporting base calls have low Phred quality scores, reducing the chance of including sequencing errors.
 # --minGQ : Minimum genotype quality - Filters out genotypes with low confidence in the assigned genotype, ensuring that only reliable genotype calls are retained.
 # --hwe   : Filter out variants which are under selection / deviate fromm hardy weinberg equillibrium. Removes sites with p values less than the set threshold.
+
+### Remove Indels
+vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05.recode.vcf --remove-indels \ 
+--out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05 --recode
+
+
 
 ## Apply a missingness filter to only keep variants which are common among a proportion of individuals.
 
