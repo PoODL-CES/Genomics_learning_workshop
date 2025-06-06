@@ -1,12 +1,13 @@
 ### Variant filtering
 ### Download the vcf file to be used from https://zenodo.org/records/15173226
 
-#1) filtering passed from non passed
-#using bcftools
+# Variant filtering can be done using different tools like bcftools, vcftools, gatk etc. Here we will provide the solutions for filtering using vcftools
+# Please note that the downloaded vcf file already has a few filters applied
 
 conda create -n bcftools -c bioconda bcftools
-bcftools --version (#this is confirmatory step)
 conda activate bcftools
+bcftools --version (#this is confirmatory step)
+
 bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
 
 #bcftools: Calls the bcftools program, a widely used tool for processing VCF/BCF files.
@@ -15,23 +16,23 @@ bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
 #-o: passed_variants.vcf.gz	Specifies the output file name where filtered variants will be saved.
 #"input_file_name".vcf.gz: The name of the input compressed VCF file containing variant calls.
 
-#2) filtering out indels
+# filtering out indels
 #to avoid alignment issues
 bcftools view -v snps -o snps_only.vcf.gz passed_variants.vcf.gz
 
-#3) Filtering out Minor allele counts
+#Filtering out Minor allele counts
  # a filter to remove very rare variants, which might be due to sequencing errors rather than real genetic variation. Rare variants are often sequencing errors rather than real mutations.
  bcftools view -i 'MAC >= 3' -o mac_filtered.vcf.gz snps_only.vcf.gz
 
-#4) genotype quality filter
+# genotype quality filter
 #ensure confidence in genotype calls
 bcftools view -i 'FMT/GQ >= 30' -o gq_filtered.vcf.gz mac_filtered.vcf.gz
 
-#5) base quality filter
+# base quality filter
 #removes low quality base calls
 bcftools view -i 'QUAL >= 30' -o bq_filtered.vcf.gz gq_filtered.vcf.gz
 
-#6) count the number of SNP's
+# count the number of SNP's
 bcftools view -H -v snps bq_filtered.vcf.gz | wc -l
 
 #### APPLYING VARIANT FILTERS ON A VCF FILE
@@ -56,20 +57,20 @@ vcftools --gzvcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_pass
 
 ## Do a for loop to apply missingness filter from 0.1 to 0.9 (variants which are found in 10% to 90%)
 
-for p in {10..90..10}; do
-  perc=$(echo "scale=2; $p / 100" | bc)
+for miss in {10..90..10}; do
+  perc=$(echo "scale=2; $miss / 100" | bc)
   vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05.recode.vcf \
            --max-missing $perc \
-           --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_miss${p} \
+           --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_miss${miss} \
            --recode
 done
 # a different output file will be generated for each value of the missingness filter.
 
 ## Extract the number of variants remaining upon applying missingness filter from 0.1 to 0.9 and make a .txt file.
 
-for i in {10..90..10}; do
-    count=$(grep -vc "^#" filtered_max_missing_${i}.recode.vcf)
-    echo "${i} ${count}" >> variant_counts.txt
+for miss in {10..90..10}; do
+    count=$(grep -vc "^#" filtered_max_missing_${miss}.recode.vcf)
+    echo "${miss} ${count}" >> variant_counts.txt
 done
 
 #### Plot the data in the variant_counts.txt using ggplot2
