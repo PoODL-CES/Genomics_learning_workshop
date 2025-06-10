@@ -96,7 +96,7 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 
 conda deactivate vcftools
 
-conda create -n R_env -c conda-forge R_env
+conda create -n R_env -c conda-forge r-base
 conda activate R_env
 
 R
