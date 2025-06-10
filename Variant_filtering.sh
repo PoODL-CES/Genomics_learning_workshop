@@ -93,13 +93,14 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 #find the percentile depth between 0.05 and 0.975, the middle 95 percentile.
 #below 0.05 because low conf
 #above 97.5 because of presence of repetitive regions or less complex regions
-#Using R 
-conda activate vcftools
-conda activate R
-#or
-#conda activate r_env
+
+conda deactivate vcftools
+
+conda create -n R_env -c conda-forge R_env
+conda activate R_env
+
 R
-depth_data <- read.table("out.ldepth.mean", header = TRUE)
+depth_data <- read.table("depth.ldepth.mean", header = TRUE)
 depths <- depth_data$MEAN_DEPTH
 lower_bound <- quantile(depths, 0.025, na.rm = TRUE)
 upper_bound <- quantile(depths, 0.975, na.rm = TRUE)
