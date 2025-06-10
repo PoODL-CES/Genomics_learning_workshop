@@ -85,7 +85,7 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 
 #### Use site mean depth filter to get informaion about mean depth at each variant site
 
-vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss _0.6.recode.vcf --site-mean-depth --out depth
+vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6.recode.vcf --site-mean-depth --out depth
 
 # Above step will give an output file depth.ldepth.mean
 
@@ -94,7 +94,7 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 #below 0.05 because low conf
 #above 97.5 because of presence of repetitive regions or less complex regions
 
-conda deactivate vcftools
+conda deactivate 
 
 conda create -n R_env -c conda-forge r-base
 conda activate R_env
@@ -107,13 +107,16 @@ upper_bound <- quantile(depths, 0.975, na.rm = TRUE)
 cat("Middle 95% range:", lower_bound, "to", upper_bound, "\n")
 #Middle 95% range: 12.8302 to 24.6604
 
-#filter rows with range
-mid_95 <- depth_data[depths >= lower_bound & depths <= upper_bound, ]
+conda deactivate
 
-#save output
-write.table(mid_95, file = "mid_95_percentile_loci.txt", row.names = FALSE, quote = FALSE)
+### Apply filters to keep only the variants that have depth values lying in the above range
 
-#output file:  mid_95_percentile_loci.txt
+conda activate vcftools
+
+vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6.recode.vcf --min-meanDP 12.8302 --max-meanDP 24.6604 \
+--recode --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile
+
+conda deactivate
 
 
 ##################################################################
