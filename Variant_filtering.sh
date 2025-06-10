@@ -4,36 +4,7 @@
 # Variant filtering can be done using different tools like bcftools, vcftools, gatk etc. Here we will provide the solutions for filtering using vcftools
 # Please note that the downloaded vcf file already has a few filters applied
 
-conda create -n bcftools -c bioconda bcftools
-conda activate bcftools
-bcftools --version (#this is confirmatory step)
 
-bcftools view -f PASS -o passed_variants.vcf.gz "input_file_name".vcf.gz
-
-#bcftools: Calls the bcftools program, a widely used tool for processing VCF/BCF files.
-#view: Opens and processes the VCF file.
-#-f PASS: Filters out variants and keeps only those with "PASS" in the FILTER column.
-#-o: passed_variants.vcf.gz	Specifies the output file name where filtered variants will be saved.
-#"input_file_name".vcf.gz: The name of the input compressed VCF file containing variant calls.
-
-# filtering out indels
-#to avoid alignment issues
-bcftools view -v snps -o snps_only.vcf.gz passed_variants.vcf.gz
-
-#Filtering out Minor allele counts
- # a filter to remove very rare variants, which might be due to sequencing errors rather than real genetic variation. Rare variants are often sequencing errors rather than real mutations.
- bcftools view -i 'MAC >= 3' -o mac_filtered.vcf.gz snps_only.vcf.gz
-
-# genotype quality filter
-#ensure confidence in genotype calls
-bcftools view -i 'FMT/GQ >= 30' -o gq_filtered.vcf.gz mac_filtered.vcf.gz
-
-# base quality filter
-#removes low quality base calls
-bcftools view -i 'QUAL >= 30' -o bq_filtered.vcf.gz gq_filtered.vcf.gz
-
-# count the number of SNP's
-bcftools view -H -v snps bq_filtered.vcf.gz | wc -l
 
 #### APPLYING VARIANT FILTERS ON A VCF FILE
 
@@ -71,7 +42,7 @@ vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOn
 
 
 
-## Apply a missingness filter to only keep variants which are common among a proportion of individuals.
+#### Apply a missingness filter to only keep variants which are common among a proportion of individuals.
 
 ## Do a for loop to apply missingness filter from 0.1 to 0.9 (variants which are found in 10% to 90%)
 
@@ -94,9 +65,6 @@ done
 #### Plot the data in the variant_counts.txt using ggplot2
 
 ## create a new conda environment ggplot2
-conda create -n r_env r-base
-conda activate r_env
-R --version
 conda create -n ggplot2 -c conda-forge r-ggplot2
 conda activate ggplot2
 
