@@ -82,6 +82,14 @@ R -e "library(ggplot2); library(scales); data <- read.table('variant_counts.txt'
 
 vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6.recode.vcf --max-missing 0.6 --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6 --recode
 
+
+#### Use site mean depth filter to get informaion about mean depth at each variant site
+
+vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss _0.6.recode.vcf --site-mean-depth --out depth
+
+# Above step will give an output file depth.ldepth.mean
+
+
 #find the percentile depth between 0.05 and 0.975, the middle 95 percentile.
 #below 0.05 because low conf
 #above 97.5 because of presence of repetitive regions or less complex regions
