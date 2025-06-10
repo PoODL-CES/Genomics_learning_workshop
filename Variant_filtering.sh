@@ -105,7 +105,7 @@ depths <- depth_data$MEAN_DEPTH
 lower_bound <- quantile(depths, 0.025, na.rm = TRUE)
 upper_bound <- quantile(depths, 0.975, na.rm = TRUE)
 cat("Middle 95% range:", lower_bound, "to", upper_bound, "\n")
-#Middle 95% range: 12.3 to 22.89705
+#Middle 95% range: 12.8302 to 24.6604
 
 #filter rows with range
 mid_95 <- depth_data[depths >= lower_bound & depths <= upper_bound, ]
