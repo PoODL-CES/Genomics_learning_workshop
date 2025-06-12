@@ -67,8 +67,8 @@ library(ggplot2)
 ggplot(eigenvec, aes(x = PC1, y = PC2, color = IID)) +
 geom_point(size = 3, alpha = 0.8) +
 theme_minimal() +
-labs(title = "PCA Plot by Region", x = "PC1", y = "PC2") +
-scale_color_brewer(palette = "Set2")
+labs(title = "PCA Plot by Region", x = "PC1", y = "PC2") 
+
 ggsave("pca_by_region.png")
 ggsave("pca_by_region.pdf")
 
