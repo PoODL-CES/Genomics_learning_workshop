@@ -53,10 +53,8 @@ conda deactivate
 
 
 # To plot the PCA we will use R (https://www.r-project.org)
-# To install R
-conda create -n r_env -c conda-forge r-base r-ggplot2
 # Activate the R environment
-conda activate r_env
+conda activate R_env
 
 # Activate R
 # 
