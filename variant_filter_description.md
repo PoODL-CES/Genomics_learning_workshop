@@ -1,0 +1,15 @@
+| Filter Name       | Description                                                                                                                                                                            |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `passOnly`        | Retained only variants that passed all internal quality filters from the variant caller (Strelka in this case).                                                                        |
+| `biallelicOnly`   | Kept only biallelic variants (i.e., sites with exactly two alleles) for downstream compatibility and clarity.                                                                          |
+| `rmvIndels`       | Removed insertions and deletions (INDELs), keeping only SNPs (single nucleotide polymorphisms).                                                                                        |
+| `minMAF0Pt05`     | Filtered for variants with a **minor allele frequency (MAF) ≥ 0.05**, ensuring informative polymorphisms and removing rare variants.                                                   |
+| `chr_E2`          | Restricted to a specific chromosome/region of interest (e.g., `chr_E2`).                                                                                                               |
+| `minDP3`          | Required a **minimum depth (DP) of 3** per genotype to avoid false positives due to low coverage.                                                                                      |
+| `minQ30`          | Ensured that each site has a **minimum site quality score of 30**, reflecting high confidence in the variant.                                                                          |
+| `minGQ30`         | Filtered genotypes to retain only those with a **Genotype Quality (GQ) ≥ 30**, removing uncertain genotype calls.                                                                      |
+| `hwe_0.05`        | Removed variants deviating significantly from **Hardy-Weinberg Equilibrium** (p < 0.05), which could indicate genotyping errors or population substructure.                            |
+| `imiss_0.6`       | Filtered out individuals with **>60% missing genotypes** to maintain data quality.                                                                                                     |
+| `miss_0.6`        | Removed variants missing in **>60% of individuals**, ensuring sufficient representation across samples.                                                                                |
+| `mid95percentile` | Likely indicates removal of extreme outliers in genotype depth or quality, retaining the **middle 95%** of data (please clarify if this is custom logic).                              |
+| `noZSB`           | Custom filter — possibly removes variants in **Z-score Signal Bias (ZSB)** regions or those affected by strand bias or alignment artifacts (you may want to describe this explicitly). |
