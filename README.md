@@ -121,6 +121,10 @@ c) Producing a filtered, high-confidence VCF file for downstream analysis
 
 *Why it's important:* Filtering improves the reliability of variant calls and ensures that only biologically relevant, high-confidence variants are retained for further analysis.
 
+Click the image below to watch a detailed walkthrough that explains the variant calling process and how it fits into the genomic analysis pipeline.
+
+[![Watch the video](https://img.youtube.com/vi/Y632IKKQW7U/hqdefault.jpg)](https://www.youtube.com/watch?v=Y632IKKQW7U)
+
 ---
 
 **5. Population Structure & Visualization**  
