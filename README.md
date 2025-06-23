@@ -73,7 +73,9 @@ c) Producing cleaned `FASTQ` files ready for mapping
 Some steps are easier to grasp when you can see them in action.  
 Watch the short walkthrough below for a concise demo of everything covered in this step!
 
-[[Fastqc results interpretation](https://img.youtube.com/vi/lUk5Ju3vCDM/hqdefault.jpg)](https://www.youtube.com/watch?v=lUk5Ju3vCDM)
+
+[![Watch the video](https://img.youtube.com/vi/lUk5Ju3vCDM/hqdefault.jpg)](https://www.youtube.com/watch?v=lUk5Ju3vCDM)
+
 
 ---
 
