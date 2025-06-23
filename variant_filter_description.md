@@ -41,10 +41,10 @@ DP (Depth of Coverage) refers to the number of sequencing reads that support a v
 #### What does minDP3 mean?
 This filter ensures that each genotype (or site) is supported by at least 3 reads. Variants with DP < 3 are excluded.
 
-** Why it's important**:
+**Benefits**:
 
 * Ensures reliable variant calls
 * Reduces errors from low-coverage or spurious reads
 * Improves accuracy in downstream analyses
 
-* ---
+ ---
