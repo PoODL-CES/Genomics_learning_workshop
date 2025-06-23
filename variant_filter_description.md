@@ -55,6 +55,7 @@ This filter retains only variants with a site quality score ≥ 30, indicating h
 It's usually Phred-scaled, meaning:
 
 QUAL 30 = 99.9% confidence the variant is true
+
 Higher scores = higher reliability
 
 **Benefits**:
