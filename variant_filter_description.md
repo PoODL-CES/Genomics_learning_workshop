@@ -125,3 +125,26 @@ This removes variant sites where more than 60% of samples have missing data.
 
 
 ---
+
+
+## What is mid95percentile?
+This filter retains only those variants where the depth per site falls within the middle 95% of the overall depth distribution.
+
+
+Using the middle 95 % of the depth distribution is a standard “trim the tails” approach:
+
+Reason	What it does
+Removes extreme outliers	Cuts the lowest 2.5 % (often under-covered, error-prone sites) and the highest 2.5 % (often multi-mapped or repetitive regions with artificially high depth).
+Retains the vast majority of data	95 % keeps almost everything that is biologically informative while discarding only the most suspicious extremes.
+Balances stringency and power	Tighter cutoffs (e.g., 90 %) risk losing useful data; looser ones (e.g., 99 %) leave more outliers that can skew statistics such as allele frequencies or depth-based filters.
+
+In short, the 95 % window is a pragmatic compromise: it preserves most variants but shields downstream analyses from depth-related artifacts.
+
+**Benefits**
+* Removes extremely low-depth sites that may be unreliable
+* Removes very high-depth sites, which could indicate repetitive regions or mapping artifacts
+* Focuses the dataset on typical, well-covered variants, improving data quality and consistency
+
+ It effectively trims the top and bottom 2.5% of sites based on depth.
+
+---
