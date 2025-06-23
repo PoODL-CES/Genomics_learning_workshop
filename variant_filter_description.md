@@ -34,3 +34,17 @@ This filter removes variants with **MAF < 0.05**, retaining only those where the
 
 ---
 
+
+## Depth Filter: minDP3
+DP (Depth of Coverage) refers to the number of sequencing reads that support a variant call at a given site in a sample.
+
+#### What does minDP3 mean?
+This filter ensures that each genotype (or site) is supported by at least 3 reads. Variants with DP < 3 are excluded.
+
+** Why it's important**:
+
+* Ensures reliable variant calls
+* Reduces errors from low-coverage or spurious reads
+* Improves accuracy in downstream analyses
+
+* ---
