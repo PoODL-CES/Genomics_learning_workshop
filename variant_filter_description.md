@@ -83,9 +83,8 @@ The filter hwe_0.05 removes variants that deviate significantly from equilibrium
 
 **Why?**
 
-Variants failing HWE may indicate genotyping errors, population structure, or selection
-
-Helps ensure biological validity of variants used in population-level studies
+* Variants failing HWE may indicate genotyping errors, population structure, or selection
+* Helps ensure biological validity of variants used in population-level studies
 
 
 ---
@@ -94,11 +93,25 @@ Helps ensure biological validity of variants used in population-level studies
 ##  Missingness per Sample: imiss_0.6
 This filter removes samples with >60% missing genotype data.
 
-**Why?**
+** Why 60%?
 
-Highly incomplete samples can bias analyses like PCA or ADMIXTURE
+* Strikes a balance between data quality and dataset retention
+* Removes samples or sites with excessive missing genotypes, which can skew analyses
+* Still retains enough data for statistical power in most population-level studies
 
-Improves dataset reliability by keeping well-covered samples
+ ** Why not 70% or 80%?
+
+* Looser thresholds allow too much missing data, which can:
+* Distort PCA or clustering
+* Reduce confidence in allele frequency estimates
+* Introduce noise in GWAS or selection scans
+
+Choosing 60% is a moderate and commonly used cutoff that helps ensure data reliability without being overly restrictive.
+
+**Benefits**
+
+* Highly incomplete samples can bias analyses like PCA or ADMIXTURE
+* Improves dataset reliability by keeping well-covered samples
 
 
 
