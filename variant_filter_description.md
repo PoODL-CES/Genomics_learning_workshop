@@ -51,7 +51,9 @@ This filter ensures that each genotype (or site) is supported by at least 3 read
 
 ## Quality Filter: minQ30
 This filter retains only variants with a site quality score ≥ 30, indicating high confidence in the variant call. The site quality score (QUAL) in a VCF file reflects the statistical confidence that a variant is real (not a sequencing error).
+
 It's usually Phred-scaled, meaning:
+
 QUAL 30 = 99.9% confidence the variant is true
 Higher scores = higher reliability
 
