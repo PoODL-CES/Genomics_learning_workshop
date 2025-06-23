@@ -13,3 +13,24 @@
 | `miss_0.6`        | Removed variants missing in **>60% of individuals**, ensuring sufficient representation across samples.                                                                                |
 | `mid95percentile` | Likely indicates removal of extreme outliers in genotype depth or quality, retaining the **middle 95%** of data (please clarify if this is custom logic).                              |
 | `noZSB`           | Custom filter — possibly removes variants in **Z-score Signal Bias (ZSB)** regions or those affected by strand bias or alignment artifacts (you may want to describe this explicitly). |
+
+
+## Minor Allele Frequency (MAF)
+
+**MAF** is the frequency at which the **less common allele** occurs at a genetic locus in a population.
+ *Example:* If allele A appears in 90% of individuals and G in 10%, then **MAF = 0.10**.
+
+---
+
+#### Why apply `minMAF0Pt05`?
+
+This filter removes variants with **MAF < 0.05**, retaining only those where the minor allele is present in **at least 5%** of individuals.
+
+**Benefits**:
+
+* Keeps informative, common variants
+* Reduces noise from rare alleles or sequencing errors
+* Improves reliability for analyses like PCA, GWAS, or Fst
+
+---
+
