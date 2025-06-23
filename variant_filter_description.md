@@ -64,3 +64,14 @@ Higher scores = higher reliability
 * Improves overall reliability of the dataset
 
 ---
+## Genotype Quality Filter: minGQ30
+The genotype quality (GQ) score represents the confidence in the individual genotype call at a variant site. It's Phred-scaled, so:
+
+GQ 30 = 99.9% confidence that the genotype is correct
+
+**Benefits**:
+* Removes low-confidence genotype calls
+* Reduces false genotyping results
+* Improves the accuracy of downstream sample-level analyses
+
+---
