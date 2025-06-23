@@ -69,7 +69,8 @@ a) Checking the quality of raw reads (using tools like `fastqc`)
 b) Trimming adapters or low-quality bases using tools such as `Trim-galore` or `trimmomatic`  
 c) Producing cleaned `FASTQ` files ready for mapping  
 
- *Why it's important:* Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial./
+ *Why it's important:* Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial.
+ 
 Some steps are easier to grasp when you can see them in action.  
 Watch the short walkthrough below for a concise demo of everything covered in this step!
 
