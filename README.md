@@ -107,6 +107,11 @@ c) Optionally apply variant filtering to remove false positives or low-confidenc
 
  *Why it's important:* This is the core step of population genetics—identifying the genetic differences across samples.
 
+ Click the image below to watch a detailed walkthrough that explains the variant calling process and how it fits into the genomic analysis pipeline.
+
+[![Variant Calling Video](https://img.youtube.com/vi/Y632IKKQW7U/maxresdefault.jpg)](https://www.youtube.com/watch?v=Y632IKKQW7U)
+
+
 ---
 
  **4. Filtering Variants**  
@@ -121,9 +126,6 @@ c) Producing a filtered, high-confidence VCF file for downstream analysis
 
 *Why it's important:* Filtering improves the reliability of variant calls and ensures that only biologically relevant, high-confidence variants are retained for further analysis.
 
-Click the image below to watch a detailed walkthrough that explains the variant calling process and how it fits into the genomic analysis pipeline.
-
-[![Watch the video](https://img.youtube.com/vi/Y632IKKQW7U/hqdefault.jpg)](https://www.youtube.com/watch?v=Y632IKKQW7U)
 
 ---
 
