@@ -75,3 +75,75 @@ GQ 30 = 99.9% confidence that the genotype is correct
 * Improves the accuracy of downstream sample-level analyses
 
 ---
+
+## Hardy-Weinberg Equilibrium (HWE)
+The HWE test checks whether the observed genotype frequencies match expected frequencies under random mating.
+
+The filter hwe_0.05 removes variants that deviate significantly from equilibrium (p-value < 0.05).
+
+**Why?**
+
+Variants failing HWE may indicate genotyping errors, population structure, or selection
+
+Helps ensure biological validity of variants used in population-level studies
+
+
+---
+
+
+##  Missingness per Sample: imiss_0.6
+This filter removes samples with >60% missing genotype data.
+
+**Why?**
+
+Highly incomplete samples can bias analyses like PCA or ADMIXTURE
+
+Improves dataset reliability by keeping well-covered samples
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+🔍 Missingness per Site: miss_0.6
+This removes variant sites where more than 60% of samples have missing data.
+
+✅ Why?
+
+Ensures you're analyzing variants seen in most samples
+
+Reduces noise from poorly genotyped regions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
