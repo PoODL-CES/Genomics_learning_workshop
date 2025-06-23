@@ -133,13 +133,13 @@ This filter retains only those variants where the depth per site falls within th
 
 Using the middle 95 % of the depth distribution is a standard “trim the tails” approach:
 
-Reason	What it does
+### Reason	what it does
 
-Removes extreme outliers	Cuts the lowest 2.5 % (often under-covered, error-prone sites) and the highest 2.5 % (often multi-mapped or repetitive regions with artificially high depth).
+* Removes extreme outliers	Cuts the lowest 2.5 % (often under-covered, error-prone sites) and the highest 2.5 % (often multi-mapped or repetitive regions with artificially high depth).
 
-Retains the vast majority of data	95 % keeps almost everything that is biologically informative while discarding only the most suspicious extremes.
+* Retains the vast majority of data	95 % keeps almost everything that is biologically informative while discarding only the most suspicious extremes.
 
-Balances stringency and power	Tighter cutoffs (e.g., 90 %) risk losing useful data; looser ones (e.g., 99 %) leave more outliers that can skew statistics such as allele frequencies or depth-based filters.
+* Balances stringency and power	Tighter cutoffs (e.g., 90 %) risk losing useful data; looser ones (e.g., 99 %) leave more outliers that can skew statistics such as allele frequencies or depth-based filters.
 
 In short, the 95 % window is a pragmatic compromise: it preserves most variants but shields downstream analyses from depth-related artifacts.
 
