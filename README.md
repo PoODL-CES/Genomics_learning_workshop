@@ -118,7 +118,7 @@ c) Optionally apply variant filtering to remove false positives or low-confidenc
 Script: [`Variant_filtering.sh`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Variant_filtering.sh)
 - Solutions File: [`Variant_filtering_solutioin.sh`](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/Variant_filtering_solution.sh)
 
-- To undersatnd more about the filters, visit below page
+- To undersatnd more about the filters, visit 
    [Variant Filter Descriptions](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/variant_filter_description.md)
 
   
