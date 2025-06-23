@@ -12,7 +12,7 @@
 | `imiss_0.6`       | Filtered out individuals with **>60% missing genotypes** to maintain data quality.                                                                                                     |
 | `miss_0.6`        | Removed variants missing in **>60% of individuals**, ensuring sufficient representation across samples.                                                                                |
 | `mid95percentile` | Likely indicates removal of extreme outliers in genotype depth or quality, retaining the **middle 95%** of data (please clarify if this is custom logic).                              |
-| `noZSB`           | Custom filter — possibly removes variants in **Z-score Signal Bias (ZSB)** regions or those affected by strand bias or alignment artifacts (you may want to describe this explicitly). |
+| `noZSB`           | Custom filter|
 
 
 ## Minor Allele Frequency (MAF)
