@@ -90,6 +90,11 @@ d) Index the `BAM` files so tools can access them efficiently
 
  *Why it's important:* Proper alignment is the foundation for all downstream analysis. Sorting/indexing ensures quick and efficient variant detection.
 
+Click the image below to watch a short walkthrough that explains BWA tool.
+
+[![Watch the video](https://img.youtube.com/vi/omZHPZwJEBE/hqdefault.jpg)](https://www.youtube.com/watch?v=omZHPZwJEBE)
+
+
 ---
 
 **3. Identifying Variants (SNPs/Indels)**  
