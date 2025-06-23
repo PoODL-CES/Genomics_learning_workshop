@@ -48,3 +48,15 @@ This filter ensures that each genotype (or site) is supported by at least 3 read
 * Improves accuracy in downstream analyses
 
  ---
+
+<details>
+<summary>🧾 What is <code>QUAL</code> (Site Quality Score)?</summary>
+
+The <strong>site quality score</strong> (shown as <code>QUAL</code> in VCF files) indicates how confident the variant caller is that a variant truly exists at that position.
+
+- It's a <strong>Phred-scaled probability</strong>:  
+  QUAL 30 = 1 in 1000 chance the call is wrong (99.9% confidence)
+
+✅ By applying <code>minQ30</code>, we keep only **high-confidence variants**, reducing the risk of false positives.
+
+</details>
