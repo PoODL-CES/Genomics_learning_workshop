@@ -71,9 +71,8 @@ c) Producing cleaned `FASTQ` files ready for mapping
 
  *Why it's important:* Poor-quality reads can lead to false variant calls or poor mapping, so quality control is crucial.
  
-Some steps are easier to grasp when you can see them in action.  
-Watch the short walkthrough below for a concise demo of everything covered in this step! Just click on the image.
-
+# Need help understanding a FastQC report?
+Click the image below to watch a short walkthrough that explains key sections of the report and how to interpret them.
 
 [![Watch the video](https://img.youtube.com/vi/lUk5Ju3vCDM/hqdefault.jpg)](https://www.youtube.com/watch?v=lUk5Ju3vCDM)
 
