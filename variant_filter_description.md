@@ -114,49 +114,14 @@ Choosing 60% is a moderate and commonly used cutoff that helps ensure data relia
 * Improves dataset reliability by keeping well-covered samples
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
-
-🔍 Missingness per Site: miss_0.6
+##  Missingness per Site: miss_0.6
 This removes variant sites where more than 60% of samples have missing data.
 
-✅ Why?
-
-Ensures you're analyzing variants seen in most samples
-
-Reduces noise from poorly genotyped regions
-
-
-
-
-
-
-
-
-
-
-
-
+**Benefits**
+* Ensures you're analyzing variants seen in most samples
+* Reduces noise from poorly genotyped regions
 
 
 ---
