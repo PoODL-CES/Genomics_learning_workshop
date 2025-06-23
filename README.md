@@ -139,3 +139,9 @@ c) Interpreting population-level genetic structure from the PCA plots
 
 *Why it's important:* PCA helps in understanding the underlying genetic variation across samples and can highlight population-level patterns or sample outliers.
 
+**Understanding PCA (Principal Component Analysis)**  
+Click the image below to watch a clear and concise explanation of PCA — a key method for visualizing population structure and genetic variation.
+
+[![Watch the video](https://img.youtube.com/vi/5vgP05YpKdE/hqdefault.jpg)](https://www.youtube.com/watch?v=5vgP05YpKdE)
+
+
