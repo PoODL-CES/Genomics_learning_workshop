@@ -1,5 +1,5 @@
 
-Welcome! This page breaks down the essential filters used to clean and refine genetic variant data before analysis. From removing rare errors to keeping only high-confidence SNPs, each step here helps you build a stronger, more accurate dataset for things like population genetics, GWAS, and PCA. Whether you're new to variant filtering or just need a quick refresher, this guide makes complex filters easy to understand—and even easier to apply.
+Welcome! This page breaks down the essential filters used for the refinement of genetic variant data before the downstream analysis. From removing errors to keeping only high-confidence SNPs, each step here helps you build more accurate dataset for things like population genetics, GWAS, and PCA. Whether you're new to variant filtering or just need an in-depth understanding of the step, this guide makes complex filters easy to understand—and even easier to apply.
 
 
 
