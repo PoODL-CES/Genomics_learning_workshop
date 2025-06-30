@@ -116,7 +116,15 @@ conda activate vcftools
 vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6.recode.vcf --min-meanDP 12.8302 --max-meanDP 24.6604 \
 --recode --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile
 
-conda deactivate
+#### Remove zoo samples from the vcf file ( samples starting with id ZSB)
+
+grep 'ZSB' out.imiss | awk '{print $1}'> zsb_samples.txt # extracts sample ids whcih start with ZSB and write it into a text file.
+
+vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile.recode.vcf \
+--remove zsb_samples.txt --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB --recode
+
+# take the sample names from zsb_samples.txt and remove those from our vcf file.
+
 
 
 ##################################################################
