@@ -1,47 +1,63 @@
-#### Download the datasets from https://zenodo.org/records/15263700
-### the filtered vcf generated after variant filtering maybe used for this exercise
 
-#PCA
+#### the filtered vcf generated after variant filtering may be used for this exercise - 
+# machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.vcf
+     
 
-#firstly, .bed, .bim and .fam files need to be generated. from a vcf file. 
+####PCA
+
+# Firstly, .bed, .bi,m and .fam files need to be generated. from a vcf file. 
 #.bed: binary file that stores genotype calls for every individual at very SNP.
 #.bim: tab-delimited text file with information about each SNP.
 #.fam: tab-delimited text file; contains information about each individual/sample.
 
-# We will do the convertion in two steps. First we will create a ped file using vcftools --plink option
 
-conda activate vcftools
 
-vcftools --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.recode.vcf \
-  --plink \
-  --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB
-conda deactivate
-
-# Then we will create the bed file by inputting the ped file to plink
 
 conda activate plink
-plink --file machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB \
+plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.vcf \
   --make-bed \
   --double-id \
   --allow-extra-chr \
-  --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB
-
+  --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB
 #plink: converts VCF file to PLINK binary format (.bed, .bim, .fam)
 #--vcf <file>: specifies the input VCF file containing the genotype data
 #--make-bed: converts the input into PLINK binary format.
 #--double-id: Treats the entire VCF sample ID as both Family ID (FID) and Individual ID (IID), which is necessary when IDs include underscores (_) that would otherwise be misinterpreted.
 #--allow-extra-chr: allows non-standard chromosome names which are not usually allowed in strict plink parsing
 #--out output_file: sets the prefix for all the output files.
-#output_file.bed, output_file.bim, and output_file.fam would be created
-conda deactivate
+# bed bim and bam file would be created with the specified prefix.
+
+#### We have to edit the fam file in order to add the region information. The second column of the fam file (IID) is edited to add information about region. We look at the names in the first column and add region information based on that
+#   For examples if the sample name has CI - it is from central india, SI means south india and so on.
+
+awk '{
+    id = $1
+
+    if (id ~ /_CI/)       region = "CenIndia"
+    else if (id ~ /_SI/)  region = "SouIndia"
+    else if (id ~ /_NE/)  region = "NorEasIndia"
+    else if (id ~ /_NW/)  region = "NorWesIndia"
+    else if (id ~ /_NOR/) region = "NorIndia"
+    else if (id ~ /_SU/)  region = "Sunderban"
+    else if (id ~ /^LGS/) region = "CenIndia"
+    else                  region = "Unknown"
+
+    $2 = region
+    print
+}' machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.fam > tmp.fam \
+&& mv tmp.fam machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.fam
+
+
+
+
 
 ################# For PCA
 conda activate plink
 
-  plink --bfile machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB \
+  plink --bfile machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB \
   --pca 5 \
   --allow-extra-chr \
-  --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB
+  --out machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB
 
 #--bfile output_file: loads the plink binary dataset previously created using --make-bed
 #--pca 5: calculates the top 5 principal components
@@ -58,8 +74,8 @@ conda activate R_env
 # Activate R
 # 
 R
-fam <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.fam", header = FALSE)
-eigenvec <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.eigenvec", header = FALSE)
+fam <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.fam", header = FALSE)
+eigenvec <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB", header = FALSE)
 colnames(eigenvec) <- c("FID", "IID", paste0("PC", 1:5))
 colnames(fam)[2] <- "Region"
 eigenvec$Region <- fam$V2
