@@ -120,17 +120,10 @@ conda activate admixture
 
 for K in {2..4}
 do 
-admixture machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.bed ${K}
+admixture machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.bed $K
 done
 
-# We use the edited .fam file with the location names for the samples and then paste the location and sample names to the .Q files created by ADMIXTURE
-# The .Q file has the ancestry proportion for each individual from each ancestral population
-# We paste the first two columns of the .fam file to the .Q file
 
-for K in {2..4}
-do
-paste geographical_location.txt machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.${K}.Q > machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.${K}.xls
-done
 
 ## to plot the admixture results
 
