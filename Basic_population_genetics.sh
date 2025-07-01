@@ -29,6 +29,7 @@ plink --vcf machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_
 
 #### We have to edit the fam file in order to add the region information. The second column of the fam file (IID) is edited to add information about region. We look at the names in the first column and add region information based on that
 #   For examples if the sample name has CI - it is from central india, SI means south india and so on.
+# This step is done in order to get proper region information while doing PCA.
 
 awk '{
     id = $1
@@ -46,6 +47,11 @@ awk '{
     print
 }' machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.fam > tmp.fam \
 && mv tmp.fam machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.fam
+
+
+#### Edit the bim file to replace the chromosome name E2 with any integer value. We need to do this because admixture does not support non-integer strings.
+
+awk '{$1 = 1; print}' new_test.bim > tmp && mv tmp new_test.bim # replacing E2 with 1 
 
 
 
@@ -123,6 +129,11 @@ do
 admixture machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.bed $K
 done
 
+## For example if K=3, admixture assumes there are 3 ancestral populations and estimates how much of each individual's genome comes from each of the 3.
+## For every value of K, output files with extensions .K.P and .K.Q will be generated
+
+## We will use the .3.Q file for plotting below.
+
 
 
 ### to plot the admixture results
@@ -143,7 +154,7 @@ library(dplyr)
 
 q3 <- read.table("machali_...3.Q")  # Replace with actual full filename 
 
-fam <- read.table("../input_files/machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.fam")
+fam <- read.table("machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.fam")
 
 sample_ids <- fam$V1 
 
@@ -212,6 +223,6 @@ conda create -n rtg-tools -c bioconda rtg-tools
 
 conda activate rtg-tools
 
-rtg vcfstats machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.recode.vcf.gz > machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.vcfstats
+rtg vcfstats machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_0.6_mid95percentile_noZSB.vcf > machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_noIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_noIndels_missing_mm0.6_meandepth95percentile_noZSB.vcfstats
 
 conda deactivate
