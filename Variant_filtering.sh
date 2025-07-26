@@ -1,3 +1,6 @@
+#### Download the vcf file to be used from this link https://zenodo.org/records/15173226
+
+
 ## Applying base quality, genotype quality and hwe filters
 ## Remove Indels
 ## Apply the individual missingness filter
