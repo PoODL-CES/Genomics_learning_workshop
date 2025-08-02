@@ -1,5 +1,5 @@
-#log into the CES cluster 
-ssh uid@10.58.21.46
+#log into the poodl lab cluster 
+ssh uid@10.58.98.100
 
 fastqc BEN_CI16_sub_2.fq.gz
 xdg-open BEN_CI16_sub_2_fastqc.html
