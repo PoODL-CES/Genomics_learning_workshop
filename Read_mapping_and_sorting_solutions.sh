@@ -109,7 +109,10 @@ samtools index BEN_NW_10_deduplicated.bam
 # indexing allows quick access to specific genomic regions and improve performance of downstream analysis tools
 
 ## Indexing the deduplicated files all at once
-samtools index *_deduplicated.bam
+
+for file in *_deduplicated.bam; do
+samtools index file
+done
 
 
 #Task 6: for estimating sequencing statistics like coverage per chromosome/scaffold
