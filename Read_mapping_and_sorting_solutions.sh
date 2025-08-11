@@ -110,22 +110,17 @@ samtools index BEN_NW_10_deduplicated.bam
 
 ## Indexing the deduplicated files all at once
 samtools index *_deduplicated.bam
-#or
-parallel 'samtools index {}' ::: *_deduplicated.bam
 
-## for statistics file
-parallel 'samtools stats {} > {.}_stats.txt' ::: *_deduplicated.bam
-## This will generate a statistics file which will have information about the number of reads that mapped to the reference geome, number of unmapped reads etc.
 
 #Task 6: for estimating sequencing statistics like coverage per chromosome/scaffold
 conda create -n qualimap -c bioconda qualimap
 conda activate qualimap
 
-qualimap bamqc -bam BEN_NW12_aligned_reads_sorted_deduplicated.bam -outdir qualimap_results -outformat HTML
+qualimap bamqc -bam BEN_NW12_deduplicated.bam -outdir qualimap_results -outformat HTML
 
 #for bulk statistics
 
-qualimap bamqc -bam *_aligned_reads_sorted_deduplicated.bam -outdir qualimap_results -outformat HTML
+qualimap bamqc -bam *_deduplicated.bam -outdir qualimap_results -outformat HTML
 
 #-bam : to input bam file
 #-outdir : Directory for results
