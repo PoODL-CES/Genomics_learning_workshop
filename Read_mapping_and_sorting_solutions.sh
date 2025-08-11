@@ -111,7 +111,7 @@ samtools index BEN_NW_10_deduplicated.bam
 ## Indexing the deduplicated files all at once
 
 for file in *_deduplicated.bam; do
-samtools index file
+samtools index "$file"
 done
 
 
