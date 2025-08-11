@@ -16,7 +16,7 @@ samtools faidx GCA_021130815.1_PanTigT.MC.v3_genomic.fna
 which configureStrelkaGermlineWorkflow.py
 #If Strelka2 is installed properly, this command should return the full path
 
-/home/your_username/miniconda3/envs/strelka/bin/configureStrelkaGermlineWorkflow.py --bam name_of_the_file_aligned_reads_sorted_deduplicated.bam --referenceFasta reference_genome_filename.fna --runDir strelka_germline
+/home/your_username/miniconda3/envs/strelka/bin/configureStrelkaGermlineWorkflow.py --bam name_of_the_file_deduplicated.bam --referenceFasta reference_genome_filename.fna --runDir strelka_germline
 #/home/your_username/miniconda3/envs/strelka/bin/configureStrelkaGermlineWorkflow.py: This is the Strelka configuration script used for germline variant calling. It prepares the pipeline and generates the necessary files to run the variant calling workflow.
 # --bam name_of_the_file_aligned_reads_sorted_deduplicated.bam: Specifies the input BAM file (aligned, sorted, and deduplicated reads). This is the sequencing data from which germline variants will be called.
 #  --referenceFasta reference_genome_filename.fna Provides the reference genome in FASTA format. This is the genome against which the BAM file was aligned.
