@@ -58,7 +58,7 @@ done
 ## Extract the number of variants remaining upon applying missingness filter from 0.1 to 0.9 and make a .txt file.
 
 for miss in {10..90..10}; do
-    count=$(grep -vc "^#" filtered_max_missing_${miss}.recode.vcf)
+    count=$(grep -vc "^#" machali_Aligned_rangeWideMerge_strelka_update2_BENGAL_mac3_passOnly_biallelicOnly_rmvIndels_minMAF0Pt05_chr_E2_minDP3_minQ30_minGQ30_hwe_0.05_imiss_0.6_miss_${miss}.recode.vcf)
     echo "${miss} ${count}" >> variant_counts.txt
 done
 
