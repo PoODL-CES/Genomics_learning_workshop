@@ -26,6 +26,9 @@ Go through the file [`Understand_Linux_commands`](https://github.com/PoODL-CES/G
 
 ---
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/Genomics_Workshop_Colab.ipynb)
+
+
 **Linux Shell basics:**  
 Start here if you're new to command-line tools.  
 
