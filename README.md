@@ -26,17 +26,20 @@ Go through the file [`Understand_Linux_commands`](https://github.com/PoODL-CES/G
 
 ---
 This repository is also avaialble in a four-section Google collab notebook, focused for performing NGS-based genomic data analysis.
+
 Part	Focus Area	Highlights:
-Part 1 FASTQ Quality Check → Pre-processing → Mapping	FASTQC analysis, adapter trimming, quality filtering, alignment to a reference genome, SAM/BAM processing
-Part 2	Variant Identification	Converting alignment files to VCF, SNP & INDEL detection, preparing files for variant calling workflows
-Part 3	Variant Calling, Filtering & Annotation	Applying variant callers, filtering low-quality variants, functional annotation and biological interpretation
-Part 4	Population-Genomics Analysis	PCA, ADMIXTURE, heterozygosity estimation, exploring population structure and diversity
+| Part                   | Focus Area                                     | Highlights                                                                                                  |
+| ---------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Part 1                 | FASTQ Quality Check → Pre-processing → Mapping | FASTQC quality assessment, adapter/quality trimming, read alignment to reference genome, SAM/BAM processing |
+| Part 2                 | Variant Identification                         | SAM/BAM → VCF conversion, SNP & INDEL detection, pre-processing for variant calling                         |
+| Part 3                 | Variant Calling, Filtering & Annotation        | Running variant callers, filtering low-quality variants, annotation for biological interpretation           |
+| Part 4                 | Population-Genomic Analysis                    | PCA, ADMIXTURE, heterozygosity metrics, population structure and diversity analysis                         |
 
 About Part 1
 
 This notebook guides you through the initial stages of genomic data processing, inspection of raw reads using FastQC, followed by read trimming and cleaning, and finishing with reference-based alignment to generate sorted, indexed BAM files.
 
-▶ Launch Part 1 in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/Genomics_Workshop_Colab.ipynb)
+ Part 1 in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/Genomics_Workshop_Colab.ipynb)
 
 
 **Linux Shell basics:**  
