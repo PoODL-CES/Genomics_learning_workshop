@@ -32,14 +32,15 @@ Part	Focus Area	Highlights:
 | ---------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | Part 1                 | FASTQ Quality Check → Pre-processing → Mapping | FASTQC quality assessment, adapter/quality trimming, read alignment to reference genome, SAM/BAM processing |
 | Part 2                 | Variant Identification                         | SAM/BAM → VCF conversion, SNP & INDEL detection, pre-processing for variant calling                         |
-| Part 3                 | Variant Calling, Filtering & Annotation        | Running variant callers, filtering low-quality variants, annotation for biological interpretation           |
+| Part 3                 | Variant Filtering                              | Running filtering to remove low-quality variants.                                                           |
 | Part 4                 | Population-Genomic Analysis                    | PCA, ADMIXTURE, heterozygosity metrics, population structure and diversity analysis                         |
 
 About Part 1
 
 This notebook guides you through the initial stages of genomic data processing, inspection of raw reads using FastQC, followed by read trimming and cleaning, and finishing with reference-based alignment to generate sorted, indexed BAM files.
 
- Part 1 in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/Genomics_Workshop_Colab.ipynb)
+Part 1 in Google Colab :  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
 
 
 **Linux Shell basics:**  
