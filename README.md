@@ -35,9 +35,6 @@ Part	Focus Area	Highlights:
 | Part 3                 | Variant Filtering                              | Running filtering to remove low-quality variants.                                                           |
 | Part 4                 | Population-Genomic Analysis                    | PCA, ADMIXTURE, heterozygosity metrics, population structure and diversity analysis                         |
 
-About Part 1
-
-This notebook guides you through the initial stages of genomic data processing, inspection of raw reads using FastQC, followed by read trimming and cleaning, and finishing with reference-based alignment to generate sorted, indexed BAM files.
 
 Trimming and Mapping in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
 
