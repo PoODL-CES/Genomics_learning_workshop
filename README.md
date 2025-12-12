@@ -39,7 +39,9 @@ About Part 1
 
 This notebook guides you through the initial stages of genomic data processing, inspection of raw reads using FastQC, followed by read trimming and cleaning, and finishing with reference-based alignment to generate sorted, indexed BAM files.
 
-Part 1 in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
+Trimming and Mapping in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
+Basic Population Genetics in Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_collab_basic_pop_gen.ipynb)
+
 
 
 **Linux Shell basics:**  
