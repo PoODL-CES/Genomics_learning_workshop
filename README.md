@@ -47,7 +47,7 @@ Variant Filtering in Google Colab: [![Open In Colab](https://colab.research.goog
 
 Basic Population Genetics in Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_collab_basic_pop_gen.ipynb)
 
-
+---
 
 **Linux Shell basics:**  
 Start here if you're new to command-line tools.  
