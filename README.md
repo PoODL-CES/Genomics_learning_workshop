@@ -41,6 +41,9 @@ This notebook guides you through the initial stages of genomic data processing, 
 
 Trimming and Mapping in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
 
+Variant Filtering in Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_Colab_Variant_filter.ipynb)
+
+
 Basic Population Genetics in Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_collab_basic_pop_gen.ipynb)
 
 
