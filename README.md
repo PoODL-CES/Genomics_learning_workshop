@@ -35,6 +35,8 @@ Part	Focus Area	Highlights:
 | Part 3                 | Variant Filtering                              | Running filtering to remove low-quality variants.                                                           |
 | Part 4                 | Population-Genomic Analysis                    | PCA, ADMIXTURE, heterozygosity metrics, population structure and diversity analysis                         |
 
+Linux Basics : [![Open In Colab](https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_collab_Linux_basics.ipynb)
+
 
 Trimming and Mapping in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
 
