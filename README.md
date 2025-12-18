@@ -37,7 +37,7 @@ Part	Focus Area	Highlights:
 
 Linux Basics: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Pranav-Datar/pacbio_denovo2/blob/main/NGS_collab_Linux_basics.ipynb)
 
-Linux Advanced: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Pranav-Datar/pacbio_denovo2/blob/main/NGS_collab_Linux_advanced.ipynb))
+Linux Advanced: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Pranav-Datar/pacbio_denovo2/blob/main/NGS_collab_Linux_advanced.ipynb)
 
 Trimming and Mapping in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
 
