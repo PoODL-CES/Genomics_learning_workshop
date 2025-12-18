@@ -35,9 +35,9 @@ Part	Focus Area	Highlights:
 | Part 3                 | Variant Filtering                              | Running filtering to remove low-quality variants.                                                           |
 | Part 4                 | Population-Genomic Analysis                    | PCA, ADMIXTURE, heterozygosity metrics, population structure and diversity analysis                         |
 
-Linux Basics: [![Open In Colab]([https://github.com/PoODLCES/Genomics_learning_workshop/blob/main/NGS_collab_Linux_basics.ipynb](https://colab.research.google.com/github/Pranav-Datar/pacbio_denovo2/blob/main/NGS_collab_Linux_basics.ipynb)
+Linux Basics: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Pranav-Datar/pacbio_denovo2/blob/main/NGS_collab_Linux_basics.ipynb)
 
-Linux Advanced: [![Open In Colab]([https://github.com/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_collab_Linux_advanced.ipynb](https://colab.research.google.com/github/Pranav-Datar/pacbio_denovo2/blob/main/NGS_collab_Linux_advanced.ipynb))
+Linux Advanced: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Pranav-Datar/pacbio_denovo2/blob/main/NGS_collab_Linux_advanced.ipynb))
 
 Trimming and Mapping in Google Colab : [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PoODL-CES/Genomics_learning_workshop/blob/main/NGS_workshop_Colab_part1.ipynb)
 
